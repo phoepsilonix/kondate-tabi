@@ -5,15 +5,17 @@
 
   interface Props {
     recipes: Recipe[];
+    /** レシピ id ごとの重み（履歴から。指定すると最近作ったものが出にくくなる） */
+    weights?: Map<string, number>;
     onpick: (recipe: Recipe) => void;
   }
-  let { recipes, onpick }: Props = $props();
+  let { recipes, weights, onpick }: Props = $props();
 
   let count = $state(1);
   let spinning = $state(false);
   let rolling = $state('');
   let results = $state<Recipe[]>([]);
-  let history = $state<Recipe[]>([]);
+  let useHistory = $state(true);
   let timer: ReturnType<typeof setInterval> | undefined;
 
   const TICKS = 16;
@@ -21,9 +23,13 @@
 
   function pickDistinct(n: number): Recipe[] {
     const pool = [...recipes];
+    const w = (r: Recipe) => (useHistory ? (weights?.get(r.id) ?? 1) : 1);
     const out: Recipe[] = [];
     while (out.length < n && pool.length > 0) {
-      out.push(pool.splice(Math.floor(Math.random() * pool.length), 1)[0]);
+      let x = Math.random() * pool.reduce((sum, r) => sum + w(r), 0);
+      let idx = pool.findIndex((r) => (x -= w(r)) < 0);
+      if (idx < 0) idx = pool.length - 1;
+      out.push(pool.splice(idx, 1)[0]);
     }
     return out;
   }
@@ -38,7 +44,6 @@
       if (++ticks >= TICKS) {
         clearInterval(timer);
         results = pickDistinct(count);
-        history.push(...results);
         spinning = false;
       }
     }, INTERVAL_MS);
@@ -50,6 +55,7 @@
 <div class="options">
   <label><input type="radio" bind:group={count} value={1} /> 1品</label>
   <label><input type="radio" bind:group={count} value={3} /> 3品</label>
+  <label><input type="checkbox" bind:checked={useHistory} /> 最近作ったものは出にくくする</label>
   <button class="primary" onclick={spin} disabled={spinning || recipes.length === 0}>ガチャを回す</button>
   <span class="muted">候補 {recipes.length}品</span>
 </div>
@@ -67,9 +73,3 @@
     <span class="muted">ボタンを押すと今日の献立が決まります</span>
   {/if}
 </div>
-
-{#if history.length > 0}
-  <h2>履歴</h2>
-  <p>{history.map((r) => r.name).join(' → ')}</p>
-  <button onclick={() => (history = [])}>履歴を消す</button>
-{/if}
