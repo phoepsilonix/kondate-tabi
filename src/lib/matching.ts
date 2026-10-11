@@ -4,7 +4,7 @@ const SEASONING = '調味料';
 
 /**
  * 選択された具材 id とレシピのマッチ度を計算する純粋関数。
- * 並び順: 不足数の少ない順（完全一致が先頭）。同数の場合は random() で少しばらつかせる。
+ * 並び順: 不足数の少ない順（完全一致が先頭）。同数の場合は random() で少しばらつかせる（weights があれば重みを反映）。
  */
 export function matchRecipes(
   selectedIds: readonly string[],
@@ -12,7 +12,7 @@ export function matchRecipes(
   ingredients: readonly Ingredient[],
   options: MatchOptions = {},
 ): MatchResult[] {
-  const { maxMissing = 2, includeSeasonings = false, random = Math.random } = options;
+  const { maxMissing = 2, includeSeasonings = false, random = Math.random, weights } = options;
   const selected = new Set(selectedIds);
   const seasoningIds = new Set(
     ingredients.filter((i) => i.category === SEASONING).map((i) => i.id),
@@ -31,7 +31,8 @@ export function matchRecipes(
 
     scored.push({
       result: { recipe, missing, isPerfect: missing.length === 0 },
-      jitter: random(),
+      // 重みが大きいほど jitter が小さくなり、同順位の中で前に来やすい
+      jitter: random() / (weights?.get(recipe.id) ?? 1),
     });
   }
 

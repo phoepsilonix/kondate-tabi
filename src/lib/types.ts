@@ -64,4 +64,14 @@ export interface MatchOptions {
   includeSeasonings?: boolean;
   /** 同順位の並び替えに使う乱数（既定 Math.random。テスト時に差し替え可） */
   random?: () => number;
+  /** レシピ id ごとの重み（大きいほど同順位の中で前に来やすい。履歴から作る。既定は全て 1） */
+  weights?: ReadonlyMap<string, number>;
+}
+
+/** 「作った・食べた」の記録 */
+export interface HistoryEntry {
+  id: string;
+  recipeId: string;
+  /** ISO 8601 形式の日時 */
+  at: string;
 }
