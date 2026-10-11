@@ -11,13 +11,13 @@
 ## 開発
 
 ```sh
-npm install
-npm run dev          # ブラウザで動作確認 (http://localhost:1420)
-npm run check        # svelte-check
-npm run tauri dev    # デスクトップアプリとして起動（Rust と Tauri の前提環境が必要）
+pnpm install
+pnpm dev          # ブラウザで動作確認 (http://localhost:1420)
+pnpm check        # svelte-check
+pnpm tauri dev    # デスクトップアプリとして起動（Rust と Tauri の前提環境が必要）
 ```
 
-初回ビルド前にアイコンを生成する場合: `npm run tauri icon <元画像.png>`
+初回ビルド前にアイコンを生成する場合: `pnpm tauri icon <元画像.png>`
 
 ## 構成
 
