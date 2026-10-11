@@ -1,8 +1,8 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "recipe-tool",
+  "productName": "こんだて旅",
   "version": "0.1.0",
-  "identifier": "love.phoepsilonix.recipe-tool",
+  "identifier": "love.phoepsilonix.kondate-tabi",
   "build": {
     "beforeDevCommand": "npm run dev",
     "devUrl": "http://localhost:1420",
@@ -10,7 +10,7 @@
     "frontendDist": "../dist"
   },
   "app": {
-    "windows": [{ "title": "レシピツール", "width": 960, "height": 720 }],
+    "windows": [{ "title": "こんだて旅", "width": 960, "height": 720 }],
     "security": { "csp": null }
   },
   "bundle": { "active": false }

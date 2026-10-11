@@ -1,4 +1,4 @@
-# recipe-tool
+# こんだて旅 (kondate-tabi)
 
 具材から作れるレシピを提案する Tauri 2 + Svelte 5 (TypeScript) のプロトタイプです。
 

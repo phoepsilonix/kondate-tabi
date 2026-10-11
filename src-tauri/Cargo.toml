@@ -1,12 +1,12 @@
 [package]
-name = "recipe-tool"
+name = "kondate-tabi"
 version = "0.1.0"
-description = "Recipe suggestion prototype"
+description = "こんだて旅: 具材と郷土料理から献立を探すプロトタイプ"
 authors = ["Masato TOYOSHIMA <phoepsilonix@phoepsilonix.love>"]
 edition = "2021"
 
 [lib]
-name = "recipe_tool_lib"
+name = "kondate_tabi_lib"
 crate-type = ["staticlib", "cdylib", "rlib"]
 
 [build-dependencies]

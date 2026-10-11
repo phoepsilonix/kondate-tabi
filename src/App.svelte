@@ -26,7 +26,7 @@
 </script>
 
 <main>
-  <h1>レシピツール</h1>
+  <h1>こんだて旅</h1>
   <nav>
     <button aria-pressed={tab === 'search'} onclick={() => (tab = 'search')}>具材から探す</button>
     <button aria-pressed={tab === 'gacha'} onclick={() => (tab = 'gacha')}>献立ガチャ</button>
