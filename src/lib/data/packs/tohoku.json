@@ -1,0 +1,179 @@
+{
+ "id": "tohoku",
+ "name": "東北の郷土料理（サンプル）",
+ "version": "0.1.0",
+ "description": "パック形式の動作確認用サンプル。分量は目安。",
+ "ingredients": [
+  {
+   "id": "tohoku.kiritanpo",
+   "name": "きりたんぽ",
+   "category": "主食"
+  },
+  {
+   "id": "tohoku.maitake",
+   "name": "まいたけ",
+   "category": "野菜"
+  },
+  {
+   "id": "tohoku.nanbu_senbei",
+   "name": "南部せんべい（汁用）",
+   "category": "主食"
+  },
+  {
+   "id": "tohoku.dried_squid",
+   "name": "するめ",
+   "category": "魚介・海藻"
+  }
+ ],
+ "recipes": [
+  {
+   "id": "tohoku.kiritanpo_nabe",
+   "name": "きりたんぽ鍋（秋田）",
+   "ingredients": [
+    {
+     "id": "tohoku.kiritanpo",
+     "amount": "4本"
+    },
+    {
+     "id": "chicken_thigh",
+     "amount": "150g"
+    },
+    {
+     "id": "burdock",
+     "amount": "1/2本"
+    },
+    {
+     "id": "green_onion",
+     "amount": "1本"
+    },
+    {
+     "id": "tohoku.maitake",
+     "amount": "1パック"
+    },
+    {
+     "id": "dashi",
+     "amount": "800ml"
+    },
+    {
+     "id": "soy_sauce",
+     "amount": "大さじ3"
+    },
+    {
+     "id": "mirin",
+     "amount": "大さじ2"
+    },
+    {
+     "id": "sake",
+     "amount": "大さじ2"
+    }
+   ],
+   "steps": [
+    "ごぼうをささがきにし、鶏肉・ねぎ・まいたけを切る。",
+    "きりたんぽは焼き色をつけ、食べやすく切る。",
+    "だし汁と調味料で鶏肉とごぼうを煮る。",
+    "きりたんぽ・まいたけ・ねぎを加え、ひと煮立ちさせる。"
+   ],
+   "minutes": 40,
+   "tags": [
+    "genre.washoku",
+    "region.tohoku",
+    "scene.local",
+    "form.nabe",
+    "main.meat",
+    "method.simmer"
+   ]
+  },
+  {
+   "id": "tohoku.senbei_jiru",
+   "name": "せんべい汁（青森）",
+   "ingredients": [
+    {
+     "id": "tohoku.nanbu_senbei",
+     "amount": "4枚"
+    },
+    {
+     "id": "chicken_thigh",
+     "amount": "100g"
+    },
+    {
+     "id": "burdock",
+     "amount": "1/3本"
+    },
+    {
+     "id": "carrot",
+     "amount": "1/3本"
+    },
+    {
+     "id": "green_onion",
+     "amount": "1/2本"
+    },
+    {
+     "id": "dashi",
+     "amount": "600ml"
+    },
+    {
+     "id": "soy_sauce",
+     "amount": "大さじ2"
+    },
+    {
+     "id": "mirin",
+     "amount": "大さじ1"
+    }
+   ],
+   "steps": [
+    "野菜と鶏肉を切る。",
+    "だし汁で鶏肉・ごぼう・にんじんを煮る。",
+    "醤油とみりんで味を整え、割ったせんべいを加えてしばらく煮る。",
+    "ねぎを加えて火を止める。"
+   ],
+   "minutes": 25,
+   "tags": [
+    "genre.washoku",
+    "region.tohoku",
+    "scene.local",
+    "form.soup",
+    "main.meat",
+    "method.simmer"
+   ]
+  },
+  {
+   "id": "tohoku.ika_ninjin",
+   "name": "いかにんじん（福島）",
+   "ingredients": [
+    {
+     "id": "tohoku.dried_squid",
+     "amount": "30g"
+    },
+    {
+     "id": "carrot",
+     "amount": "1本"
+    },
+    {
+     "id": "soy_sauce",
+     "amount": "大さじ2"
+    },
+    {
+     "id": "mirin",
+     "amount": "大さじ2"
+    },
+    {
+     "id": "sake",
+     "amount": "大さじ1"
+    }
+   ],
+   "steps": [
+    "するめを水で戻して細切りにし、にんじんも細切りにする。",
+    "調味料を合わせ、材料を漬ける。",
+    "冷蔵庫で半日以上なじませる。"
+   ],
+   "minutes": 15,
+   "tags": [
+    "genre.washoku",
+    "region.tohoku",
+    "scene.local",
+    "form.side",
+    "main.fish"
+   ]
+  }
+ ]
+}

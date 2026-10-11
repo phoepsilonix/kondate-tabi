@@ -28,3 +28,14 @@ src/lib/matching.ts     マッチング（純粋関数）
 src/lib/components/     UI コンポーネント
 src-tauri/              Tauri 2（find_matching_recipes コマンド）
 ```
+
+## データパック
+
+レシピ・具材・タグは「パック」単位で管理します（形式は `src/lib/types.ts` の `Pack`）。
+
+- 標準パック: `src/lib/data/base.json`（軸 `facets` とタグ `tags` の辞書を含む）
+- 追加パック: `src/lib/data/packs/*.json` に置くと自動で読み込まれます（例: `tohoku.json`）
+- タグは軸ごとの辞書で、1つのレシピが複数のタグを持てます。絞り込みは「同じ軸はOR、軸が違えばAND」です。
+- パック独自の具材・レシピの `id` は `パックid.名前`（例: `tohoku.kiritanpo`）にして、他と衝突しないようにします。
+- Rust 側は現状、標準パックのみを読み込みます。
+- レシピは既存の書籍やサイトの文章を写さず、自分の言葉で要点をまとめてください。
