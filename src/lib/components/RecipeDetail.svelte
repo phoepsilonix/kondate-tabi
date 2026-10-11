@@ -4,14 +4,15 @@
   interface Props {
     recipe: Recipe;
     names: Map<string, string>;
+    tagNames: Map<string, string>;
     onclose: () => void;
   }
-  let { recipe, names, onclose }: Props = $props();
+  let { recipe, names, tagNames, onclose }: Props = $props();
 </script>
 
 <section class="detail">
   <h2>{recipe.name}（{recipe.minutes}分）</h2>
-  <p class="muted">{recipe.tags.join(' / ')}</p>
+  <p class="muted">{recipe.tags.map((t) => tagNames.get(t) ?? t).join(' / ')}</p>
   <h3>材料</h3>
   <ul>
     {#each recipe.ingredients as ing (ing.id)}

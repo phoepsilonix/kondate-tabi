@@ -50,7 +50,8 @@
 <div class="options">
   <label><input type="radio" bind:group={count} value={1} /> 1品</label>
   <label><input type="radio" bind:group={count} value={3} /> 3品</label>
-  <button class="primary" onclick={spin} disabled={spinning}>ガチャを回す</button>
+  <button class="primary" onclick={spin} disabled={spinning || recipes.length === 0}>ガチャを回す</button>
+  <span class="muted">候補 {recipes.length}品</span>
 </div>
 
 <div class="slot">

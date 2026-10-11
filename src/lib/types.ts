@@ -15,12 +15,39 @@ export interface Recipe {
   ingredients: RecipeIngredient[];
   steps: string[];
   minutes: number;
+  /** タグ id の配列 */
   tags: string[];
 }
 
-export interface Dataset {
-  ingredients: Ingredient[];
-  recipes: Recipe[];
+/** 軸（ファセット）。例: 地域、料理ジャンル、形態 */
+export interface Facet {
+  id: string;
+  name: string;
+}
+
+/** タグ。1つのレシピが複数の軸・複数のタグを持てる。id は「軸.名前」形式（例: genre.washoku） */
+export interface Tag {
+  id: string;
+  name: string;
+  facet: string;
+}
+
+/** データパック。標準データも追加の地域パックも同じ形式。id は他パックと被らないようにする */
+export interface Pack {
+  id: string;
+  name: string;
+  version: string;
+  description?: string;
+  facets?: Facet[];
+  tags?: Tag[];
+  ingredients?: Ingredient[];
+  recipes?: Recipe[];
+}
+
+/** 結果一覧の1行。具材マッチを使わない場合 missing は undefined */
+export interface ResultRow {
+  recipe: Recipe;
+  missing?: string[];
 }
 
 export interface MatchResult {

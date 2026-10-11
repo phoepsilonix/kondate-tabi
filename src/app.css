@@ -23,3 +23,4 @@ legend { font-weight: 600; padding: 0 .4rem; }
 .options { display: flex; flex-wrap: wrap; gap: 1rem; align-items: center; margin: .75rem 0; font-size: .9rem; }
 .slot { font-size: 1.6rem; text-align: center; padding: 1.5rem; background: #fff; border: 2px dashed #d9822b; border-radius: 12px; min-height: 2.5rem; }
 .muted { color: #777; font-size: .9rem; }
+summary { cursor: pointer; font-weight: 600; margin-bottom: .5rem; }

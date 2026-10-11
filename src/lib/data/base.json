@@ -1,4 +1,195 @@
 {
+ "id": "base",
+ "name": "標準（家庭・給食の定番）",
+ "version": "0.2.0",
+ "facets": [
+  {
+   "id": "region",
+   "name": "地域"
+  },
+  {
+   "id": "genre",
+   "name": "料理ジャンル"
+  },
+  {
+   "id": "form",
+   "name": "形態"
+  },
+  {
+   "id": "main",
+   "name": "主材料"
+  },
+  {
+   "id": "method",
+   "name": "調理法"
+  },
+  {
+   "id": "scene",
+   "name": "場面・由来"
+  }
+ ],
+ "tags": [
+  {
+   "id": "region.hokkaido",
+   "name": "北海道",
+   "facet": "region"
+  },
+  {
+   "id": "region.tohoku",
+   "name": "東北",
+   "facet": "region"
+  },
+  {
+   "id": "region.kanto",
+   "name": "関東",
+   "facet": "region"
+  },
+  {
+   "id": "region.chubu",
+   "name": "中部",
+   "facet": "region"
+  },
+  {
+   "id": "region.kinki",
+   "name": "近畿",
+   "facet": "region"
+  },
+  {
+   "id": "region.chugoku",
+   "name": "中国",
+   "facet": "region"
+  },
+  {
+   "id": "region.shikoku",
+   "name": "四国",
+   "facet": "region"
+  },
+  {
+   "id": "region.kyushu",
+   "name": "九州・沖縄",
+   "facet": "region"
+  },
+  {
+   "id": "genre.washoku",
+   "name": "和食",
+   "facet": "genre"
+  },
+  {
+   "id": "genre.chuka",
+   "name": "中華",
+   "facet": "genre"
+  },
+  {
+   "id": "genre.yoshoku",
+   "name": "洋食",
+   "facet": "genre"
+  },
+  {
+   "id": "genre.italian",
+   "name": "イタリアン",
+   "facet": "genre"
+  },
+  {
+   "id": "genre.french",
+   "name": "フレンチ",
+   "facet": "genre"
+  },
+  {
+   "id": "form.teishoku",
+   "name": "定食",
+   "facet": "form"
+  },
+  {
+   "id": "form.donburi",
+   "name": "丼",
+   "facet": "form"
+  },
+  {
+   "id": "form.rice",
+   "name": "ご飯もの",
+   "facet": "form"
+  },
+  {
+   "id": "form.noodle",
+   "name": "麺",
+   "facet": "form"
+  },
+  {
+   "id": "form.soup",
+   "name": "汁物",
+   "facet": "form"
+  },
+  {
+   "id": "form.nabe",
+   "name": "鍋",
+   "facet": "form"
+  },
+  {
+   "id": "form.side",
+   "name": "副菜",
+   "facet": "form"
+  },
+  {
+   "id": "main.fish",
+   "name": "魚",
+   "facet": "main"
+  },
+  {
+   "id": "main.meat",
+   "name": "肉",
+   "facet": "main"
+  },
+  {
+   "id": "main.egg",
+   "name": "卵",
+   "facet": "main"
+  },
+  {
+   "id": "main.tofu",
+   "name": "豆腐",
+   "facet": "main"
+  },
+  {
+   "id": "main.vegetable",
+   "name": "野菜",
+   "facet": "main"
+  },
+  {
+   "id": "method.simmer",
+   "name": "煮物",
+   "facet": "method"
+  },
+  {
+   "id": "method.grill",
+   "name": "焼き物",
+   "facet": "method"
+  },
+  {
+   "id": "method.stir_fry",
+   "name": "炒め物",
+   "facet": "method"
+  },
+  {
+   "id": "scene.school",
+   "name": "給食",
+   "facet": "scene"
+  },
+  {
+   "id": "scene.quick",
+   "name": "簡単",
+   "facet": "scene"
+  },
+  {
+   "id": "scene.classic",
+   "name": "定番",
+   "facet": "scene"
+  },
+  {
+   "id": "scene.local",
+   "name": "郷土料理",
+   "facet": "scene"
+  }
+ ],
  "ingredients": [
   {
    "id": "potato",
@@ -281,9 +472,12 @@
    ],
    "minutes": 30,
    "tags": [
-    "煮物",
-    "和食",
-    "定番"
+    "genre.washoku",
+    "form.teishoku",
+    "main.meat",
+    "main.vegetable",
+    "method.simmer",
+    "scene.classic"
    ]
   },
   {
@@ -319,9 +513,10 @@
    ],
    "minutes": 10,
    "tags": [
-    "汁物",
-    "和食",
-    "給食"
+    "genre.washoku",
+    "form.soup",
+    "main.tofu",
+    "scene.school"
    ]
   },
   {
@@ -361,9 +556,12 @@
    ],
    "minutes": 40,
    "tags": [
-    "煮込み",
-    "洋食",
-    "給食"
+    "genre.yoshoku",
+    "form.rice",
+    "main.meat",
+    "main.vegetable",
+    "method.simmer",
+    "scene.school"
    ]
   },
   {
@@ -403,9 +601,11 @@
    ],
    "minutes": 30,
    "tags": [
-    "焼き物",
-    "洋食",
-    "定番"
+    "genre.yoshoku",
+    "form.teishoku",
+    "main.meat",
+    "method.grill",
+    "scene.classic"
    ]
   },
   {
@@ -444,8 +644,11 @@
    ],
    "minutes": 15,
    "tags": [
-    "炒め物",
-    "簡単"
+    "form.teishoku",
+    "main.meat",
+    "main.vegetable",
+    "method.stir_fry",
+    "scene.quick"
    ]
   },
   {
@@ -477,9 +680,11 @@
    ],
    "minutes": 10,
    "tags": [
-    "卵料理",
-    "和食",
-    "簡単"
+    "genre.washoku",
+    "form.side",
+    "main.egg",
+    "method.grill",
+    "scene.quick"
    ]
   },
   {
@@ -530,8 +735,13 @@
    ],
    "minutes": 35,
    "tags": [
-    "煮物",
-    "和食"
+    "genre.washoku",
+    "form.side",
+    "main.meat",
+    "main.vegetable",
+    "method.simmer",
+    "region.kyushu",
+    "scene.local"
    ]
   },
   {
@@ -575,9 +785,12 @@
    ],
    "minutes": 20,
    "tags": [
-    "丼",
-    "和食",
-    "卵料理"
+    "genre.washoku",
+    "form.donburi",
+    "main.meat",
+    "main.egg",
+    "method.simmer",
+    "scene.classic"
    ]
   },
   {
@@ -621,9 +834,10 @@
    ],
    "minutes": 15,
    "tags": [
-    "炒め煮",
-    "和食",
-    "副菜"
+    "genre.washoku",
+    "form.side",
+    "main.vegetable",
+    "method.stir_fry"
    ]
   },
   {
@@ -653,9 +867,10 @@
    ],
    "minutes": 5,
    "tags": [
-    "サラダ",
-    "副菜",
-    "簡単"
+    "genre.yoshoku",
+    "form.side",
+    "main.vegetable",
+    "scene.quick"
    ]
   },
   {
@@ -686,9 +901,12 @@
    ],
    "minutes": 15,
    "tags": [
-    "焼き魚",
-    "和食",
-    "簡単"
+    "genre.washoku",
+    "form.teishoku",
+    "main.fish",
+    "method.grill",
+    "scene.quick",
+    "scene.school"
    ]
   },
   {
@@ -739,8 +957,11 @@
    ],
    "minutes": 20,
    "tags": [
-    "中華",
-    "炒め煮"
+    "genre.chuka",
+    "form.teishoku",
+    "main.meat",
+    "main.tofu",
+    "method.simmer"
    ]
   },
   {
@@ -779,9 +1000,11 @@
    ],
    "minutes": 10,
    "tags": [
-    "ご飯もの",
-    "中華",
-    "簡単"
+    "genre.chuka",
+    "form.rice",
+    "main.egg",
+    "method.stir_fry",
+    "scene.quick"
    ]
   },
   {
@@ -812,9 +1035,10 @@
    ],
    "minutes": 10,
    "tags": [
-    "和え物",
-    "和食",
-    "副菜"
+    "genre.washoku",
+    "form.side",
+    "main.vegetable",
+    "scene.school"
    ]
   },
   {
@@ -857,9 +1081,11 @@
    ],
    "minutes": 15,
    "tags": [
-    "焼き物",
-    "和食",
-    "定番"
+    "genre.washoku",
+    "form.teishoku",
+    "main.meat",
+    "method.stir_fry",
+    "scene.classic"
    ]
   }
  ]

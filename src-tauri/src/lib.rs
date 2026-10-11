@@ -3,7 +3,7 @@ use std::collections::HashSet;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 // フロントと同じモックデータを共有（後で SQLite に置き換えやすいよう Repository 経由で参照）
-const MOCK_JSON: &str = include_str!("../../src/lib/data/mock.json");
+const MOCK_JSON: &str = include_str!("../../src/lib/data/base.json");
 
 const SEASONING: &str = "調味料";
 
