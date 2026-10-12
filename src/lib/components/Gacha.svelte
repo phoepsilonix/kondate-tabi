@@ -1,55 +1,55 @@
 <script lang="ts">
-  import { onDestroy } from 'svelte';
-  import { fly } from 'svelte/transition';
-  import type { Recipe } from '../types';
+import { onDestroy } from "svelte";
+import { fly } from "svelte/transition";
+import type { Recipe } from "../types";
 
-  interface Props {
-    recipes: Recipe[];
-    /** レシピ id ごとの重み（履歴から。指定すると最近作ったものが出にくくなる） */
-    weights?: Map<string, number>;
-    onpick: (recipe: Recipe) => void;
-  }
-  let { recipes, weights, onpick }: Props = $props();
+interface Props {
+	recipes: Recipe[];
+	/** レシピ id ごとの重み（履歴から。指定すると最近作ったものが出にくくなる） */
+	weights?: Map<string, number>;
+	onpick: (recipe: Recipe) => void;
+}
+let { recipes, weights, onpick }: Props = $props();
 
-  let count = $state(1);
-  let spinning = $state(false);
-  let rolling = $state('');
-  let results = $state<Recipe[]>([]);
-  let useHistory = $state(true);
-  let timer: ReturnType<typeof setInterval> | undefined;
+let count = $state(1);
+let spinning = $state(false);
+let rolling = $state("");
+let results = $state<Recipe[]>([]);
+let useHistory = $state(true);
+let timer: ReturnType<typeof setInterval> | undefined;
 
-  const TICKS = 16;
-  const INTERVAL_MS = 70;
+const TICKS = 16;
+const INTERVAL_MS = 70;
 
-  function pickDistinct(n: number): Recipe[] {
-    const pool = [...recipes];
-    const w = (r: Recipe) => (useHistory ? (weights?.get(r.id) ?? 1) : 1);
-    const out: Recipe[] = [];
-    while (out.length < n && pool.length > 0) {
-      let x = Math.random() * pool.reduce((sum, r) => sum + w(r), 0);
-      let idx = pool.findIndex((r) => (x -= w(r)) < 0);
-      if (idx < 0) idx = pool.length - 1;
-      out.push(pool.splice(idx, 1)[0]);
-    }
-    return out;
-  }
+function pickDistinct(n: number): Recipe[] {
+	const pool = [...recipes];
+	const w = (r: Recipe) => (useHistory ? (weights?.get(r.id) ?? 1) : 1);
+	const out: Recipe[] = [];
+	while (out.length < n && pool.length > 0) {
+		let x = Math.random() * pool.reduce((sum, r) => sum + w(r), 0);
+		let idx = pool.findIndex((r) => (x -= w(r)) < 0);
+		if (idx < 0) idx = pool.length - 1;
+		out.push(pool.splice(idx, 1)[0]);
+	}
+	return out;
+}
 
-  function spin() {
-    if (spinning || recipes.length === 0) return;
-    spinning = true;
-    results = [];
-    let ticks = 0;
-    timer = setInterval(() => {
-      rolling = recipes[Math.floor(Math.random() * recipes.length)].name;
-      if (++ticks >= TICKS) {
-        clearInterval(timer);
-        results = pickDistinct(count);
-        spinning = false;
-      }
-    }, INTERVAL_MS);
-  }
+function spin() {
+	if (spinning || recipes.length === 0) return;
+	spinning = true;
+	results = [];
+	let ticks = 0;
+	timer = setInterval(() => {
+		rolling = recipes[Math.floor(Math.random() * recipes.length)].name;
+		if (++ticks >= TICKS) {
+			clearInterval(timer);
+			results = pickDistinct(count);
+			spinning = false;
+		}
+	}, INTERVAL_MS);
+}
 
-  onDestroy(() => clearInterval(timer));
+onDestroy(() => clearInterval(timer));
 </script>
 
 <div class="options">

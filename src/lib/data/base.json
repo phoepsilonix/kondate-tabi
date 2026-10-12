@@ -1,1092 +1,1036 @@
 {
- "id": "base",
- "name": "標準（家庭・給食の定番）",
- "version": "0.2.0",
- "facets": [
-  {
-   "id": "region",
-   "name": "地域"
-  },
-  {
-   "id": "genre",
-   "name": "料理ジャンル"
-  },
-  {
-   "id": "form",
-   "name": "形態"
-  },
-  {
-   "id": "main",
-   "name": "主材料"
-  },
-  {
-   "id": "method",
-   "name": "調理法"
-  },
-  {
-   "id": "scene",
-   "name": "場面・由来"
-  }
- ],
- "tags": [
-  {
-   "id": "region.hokkaido",
-   "name": "北海道",
-   "facet": "region"
-  },
-  {
-   "id": "region.tohoku",
-   "name": "東北",
-   "facet": "region"
-  },
-  {
-   "id": "region.kanto",
-   "name": "関東",
-   "facet": "region"
-  },
-  {
-   "id": "region.chubu",
-   "name": "中部",
-   "facet": "region"
-  },
-  {
-   "id": "region.kinki",
-   "name": "近畿",
-   "facet": "region"
-  },
-  {
-   "id": "region.chugoku",
-   "name": "中国",
-   "facet": "region"
-  },
-  {
-   "id": "region.shikoku",
-   "name": "四国",
-   "facet": "region"
-  },
-  {
-   "id": "region.kyushu",
-   "name": "九州・沖縄",
-   "facet": "region"
-  },
-  {
-   "id": "genre.washoku",
-   "name": "和食",
-   "facet": "genre"
-  },
-  {
-   "id": "genre.chuka",
-   "name": "中華",
-   "facet": "genre"
-  },
-  {
-   "id": "genre.yoshoku",
-   "name": "洋食",
-   "facet": "genre"
-  },
-  {
-   "id": "genre.italian",
-   "name": "イタリアン",
-   "facet": "genre"
-  },
-  {
-   "id": "genre.french",
-   "name": "フレンチ",
-   "facet": "genre"
-  },
-  {
-   "id": "form.teishoku",
-   "name": "定食",
-   "facet": "form"
-  },
-  {
-   "id": "form.donburi",
-   "name": "丼",
-   "facet": "form"
-  },
-  {
-   "id": "form.rice",
-   "name": "ご飯もの",
-   "facet": "form"
-  },
-  {
-   "id": "form.noodle",
-   "name": "麺",
-   "facet": "form"
-  },
-  {
-   "id": "form.soup",
-   "name": "汁物",
-   "facet": "form"
-  },
-  {
-   "id": "form.nabe",
-   "name": "鍋",
-   "facet": "form"
-  },
-  {
-   "id": "form.side",
-   "name": "副菜",
-   "facet": "form"
-  },
-  {
-   "id": "main.fish",
-   "name": "魚",
-   "facet": "main"
-  },
-  {
-   "id": "main.meat",
-   "name": "肉",
-   "facet": "main"
-  },
-  {
-   "id": "main.egg",
-   "name": "卵",
-   "facet": "main"
-  },
-  {
-   "id": "main.tofu",
-   "name": "豆腐",
-   "facet": "main"
-  },
-  {
-   "id": "main.vegetable",
-   "name": "野菜",
-   "facet": "main"
-  },
-  {
-   "id": "method.simmer",
-   "name": "煮物",
-   "facet": "method"
-  },
-  {
-   "id": "method.grill",
-   "name": "焼き物",
-   "facet": "method"
-  },
-  {
-   "id": "method.stir_fry",
-   "name": "炒め物",
-   "facet": "method"
-  },
-  {
-   "id": "scene.school",
-   "name": "給食",
-   "facet": "scene"
-  },
-  {
-   "id": "scene.quick",
-   "name": "簡単",
-   "facet": "scene"
-  },
-  {
-   "id": "scene.classic",
-   "name": "定番",
-   "facet": "scene"
-  },
-  {
-   "id": "scene.local",
-   "name": "郷土料理",
-   "facet": "scene"
-  }
- ],
- "ingredients": [
-  {
-   "id": "potato",
-   "name": "じゃがいも",
-   "category": "野菜"
-  },
-  {
-   "id": "carrot",
-   "name": "にんじん",
-   "category": "野菜"
-  },
-  {
-   "id": "onion",
-   "name": "玉ねぎ",
-   "category": "野菜"
-  },
-  {
-   "id": "cabbage",
-   "name": "キャベツ",
-   "category": "野菜"
-  },
-  {
-   "id": "bean_sprouts",
-   "name": "もやし",
-   "category": "野菜"
-  },
-  {
-   "id": "lotus_root",
-   "name": "れんこん",
-   "category": "野菜"
-  },
-  {
-   "id": "burdock",
-   "name": "ごぼう",
-   "category": "野菜"
-  },
-  {
-   "id": "spinach",
-   "name": "ほうれん草",
-   "category": "野菜"
-  },
-  {
-   "id": "lettuce",
-   "name": "レタス",
-   "category": "野菜"
-  },
-  {
-   "id": "cucumber",
-   "name": "きゅうり",
-   "category": "野菜"
-  },
-  {
-   "id": "tomato",
-   "name": "トマト",
-   "category": "野菜"
-  },
-  {
-   "id": "green_onion",
-   "name": "ねぎ",
-   "category": "野菜"
-  },
-  {
-   "id": "ginger",
-   "name": "生姜",
-   "category": "野菜"
-  },
-  {
-   "id": "garlic",
-   "name": "にんにく",
-   "category": "野菜"
-  },
-  {
-   "id": "daikon",
-   "name": "大根",
-   "category": "野菜"
-  },
-  {
-   "id": "pork_slices",
-   "name": "豚こま切れ肉",
-   "category": "肉"
-  },
-  {
-   "id": "pork_loin",
-   "name": "豚ロース肉",
-   "category": "肉"
-  },
-  {
-   "id": "chicken_thigh",
-   "name": "鶏もも肉",
-   "category": "肉"
-  },
-  {
-   "id": "mixed_mince",
-   "name": "合いびき肉",
-   "category": "肉"
-  },
-  {
-   "id": "pork_mince",
-   "name": "豚ひき肉",
-   "category": "肉"
-  },
-  {
-   "id": "ham",
-   "name": "ハム",
-   "category": "肉"
-  },
-  {
-   "id": "salmon",
-   "name": "鮭",
-   "category": "魚介・海藻"
-  },
-  {
-   "id": "katsuobushi",
-   "name": "かつお節",
-   "category": "魚介・海藻"
-  },
-  {
-   "id": "wakame",
-   "name": "わかめ",
-   "category": "魚介・海藻"
-  },
-  {
-   "id": "egg",
-   "name": "卵",
-   "category": "卵・乳製品"
-  },
-  {
-   "id": "milk",
-   "name": "牛乳",
-   "category": "卵・乳製品"
-  },
-  {
-   "id": "tofu",
-   "name": "豆腐",
-   "category": "大豆・加工品"
-  },
-  {
-   "id": "konjac",
-   "name": "こんにゃく",
-   "category": "大豆・加工品"
-  },
-  {
-   "id": "shirataki",
-   "name": "しらたき",
-   "category": "大豆・加工品"
-  },
-  {
-   "id": "dried_shiitake",
-   "name": "干し椎茸",
-   "category": "大豆・加工品"
-  },
-  {
-   "id": "soy_sauce",
-   "name": "醤油",
-   "category": "調味料"
-  },
-  {
-   "id": "mirin",
-   "name": "みりん",
-   "category": "調味料"
-  },
-  {
-   "id": "sugar",
-   "name": "砂糖",
-   "category": "調味料"
-  },
-  {
-   "id": "salt_pepper",
-   "name": "塩こしょう",
-   "category": "調味料"
-  },
-  {
-   "id": "miso",
-   "name": "味噌",
-   "category": "調味料"
-  },
-  {
-   "id": "sake",
-   "name": "酒",
-   "category": "調味料"
-  },
-  {
-   "id": "dashi",
-   "name": "だし汁",
-   "category": "調味料"
-  },
-  {
-   "id": "curry_roux",
-   "name": "カレールー",
-   "category": "調味料"
-  },
-  {
-   "id": "doubanjiang",
-   "name": "豆板醤",
-   "category": "調味料"
-  },
-  {
-   "id": "chicken_stock",
-   "name": "鶏がらスープ",
-   "category": "調味料"
-  },
-  {
-   "id": "potato_starch",
-   "name": "片栗粉",
-   "category": "調味料"
-  },
-  {
-   "id": "dressing",
-   "name": "ドレッシング",
-   "category": "調味料"
-  },
-  {
-   "id": "sesame_oil",
-   "name": "ごま油",
-   "category": "調味料"
-  },
-  {
-   "id": "white_sesame",
-   "name": "白いりごま",
-   "category": "調味料"
-  },
-  {
-   "id": "bread_crumbs",
-   "name": "パン粉",
-   "category": "調味料"
-  },
-  {
-   "id": "rice",
-   "name": "ご飯",
-   "category": "主食"
-  }
- ],
- "recipes": [
-  {
-   "id": "r01",
-   "name": "肉じゃが",
-   "ingredients": [
+  "id": "base",
+  "name": "標準（家庭・給食の定番）",
+  "version": "0.2.0",
+  "facets": [
     {
-     "id": "potato",
-     "amount": "2個"
+      "id": "region",
+      "name": "地域"
     },
     {
-     "id": "carrot",
-     "amount": "1/2本"
+      "id": "genre",
+      "name": "料理ジャンル"
     },
     {
-     "id": "onion",
-     "amount": "1個"
+      "id": "form",
+      "name": "形態"
     },
     {
-     "id": "pork_slices",
-     "amount": "150g"
+      "id": "main",
+      "name": "主材料"
     },
     {
-     "id": "shirataki",
-     "amount": "適量"
+      "id": "method",
+      "name": "調理法"
     },
     {
-     "id": "soy_sauce",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "mirin",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "sugar",
-     "amount": "大さじ1"
-    },
-    {
-     "id": "dashi",
-     "amount": "200ml"
+      "id": "scene",
+      "name": "場面・由来"
     }
-   ],
-   "steps": [
-    "野菜を乱切り、豚肉は食べやすい大きさに切る。",
-    "鍋に油を熱し、豚肉を炒めて色が変わったら野菜を加える。",
-    "だし汁と調味料を入れて煮立て、落し蓋をして弱火で15分ほど煮る。",
-    "味を見て整え、火を止める。"
-   ],
-   "minutes": 30,
-   "tags": [
-    "genre.washoku",
-    "form.teishoku",
-    "main.meat",
-    "main.vegetable",
-    "method.simmer",
-    "scene.classic"
-   ]
-  },
-  {
-   "id": "r02",
-   "name": "味噌汁",
-   "ingredients": [
+  ],
+  "tags": [
     {
-     "id": "dashi",
-     "amount": "400ml"
+      "id": "region.hokkaido",
+      "name": "北海道",
+      "facet": "region"
     },
     {
-     "id": "miso",
-     "amount": "大さじ2弱"
+      "id": "region.tohoku",
+      "name": "東北",
+      "facet": "region"
     },
     {
-     "id": "tofu",
-     "amount": "1/4丁"
+      "id": "region.kanto",
+      "name": "関東",
+      "facet": "region"
     },
     {
-     "id": "wakame",
-     "amount": "適量"
+      "id": "region.chubu",
+      "name": "中部",
+      "facet": "region"
     },
     {
-     "id": "green_onion",
-     "amount": "適量"
+      "id": "region.kinki",
+      "name": "近畿",
+      "facet": "region"
+    },
+    {
+      "id": "region.chugoku",
+      "name": "中国",
+      "facet": "region"
+    },
+    {
+      "id": "region.shikoku",
+      "name": "四国",
+      "facet": "region"
+    },
+    {
+      "id": "region.kyushu",
+      "name": "九州・沖縄",
+      "facet": "region"
+    },
+    {
+      "id": "genre.washoku",
+      "name": "和食",
+      "facet": "genre"
+    },
+    {
+      "id": "genre.chuka",
+      "name": "中華",
+      "facet": "genre"
+    },
+    {
+      "id": "genre.yoshoku",
+      "name": "洋食",
+      "facet": "genre"
+    },
+    {
+      "id": "genre.italian",
+      "name": "イタリアン",
+      "facet": "genre"
+    },
+    {
+      "id": "genre.french",
+      "name": "フレンチ",
+      "facet": "genre"
+    },
+    {
+      "id": "form.teishoku",
+      "name": "定食",
+      "facet": "form"
+    },
+    {
+      "id": "form.donburi",
+      "name": "丼",
+      "facet": "form"
+    },
+    {
+      "id": "form.rice",
+      "name": "ご飯もの",
+      "facet": "form"
+    },
+    {
+      "id": "form.noodle",
+      "name": "麺",
+      "facet": "form"
+    },
+    {
+      "id": "form.soup",
+      "name": "汁物",
+      "facet": "form"
+    },
+    {
+      "id": "form.nabe",
+      "name": "鍋",
+      "facet": "form"
+    },
+    {
+      "id": "form.side",
+      "name": "副菜",
+      "facet": "form"
+    },
+    {
+      "id": "main.fish",
+      "name": "魚",
+      "facet": "main"
+    },
+    {
+      "id": "main.meat",
+      "name": "肉",
+      "facet": "main"
+    },
+    {
+      "id": "main.egg",
+      "name": "卵",
+      "facet": "main"
+    },
+    {
+      "id": "main.tofu",
+      "name": "豆腐",
+      "facet": "main"
+    },
+    {
+      "id": "main.vegetable",
+      "name": "野菜",
+      "facet": "main"
+    },
+    {
+      "id": "method.simmer",
+      "name": "煮物",
+      "facet": "method"
+    },
+    {
+      "id": "method.grill",
+      "name": "焼き物",
+      "facet": "method"
+    },
+    {
+      "id": "method.stir_fry",
+      "name": "炒め物",
+      "facet": "method"
+    },
+    {
+      "id": "scene.school",
+      "name": "給食",
+      "facet": "scene"
+    },
+    {
+      "id": "scene.quick",
+      "name": "簡単",
+      "facet": "scene"
+    },
+    {
+      "id": "scene.classic",
+      "name": "定番",
+      "facet": "scene"
+    },
+    {
+      "id": "scene.local",
+      "name": "郷土料理",
+      "facet": "scene"
     }
-   ],
-   "steps": [
-    "だし汁を温める。",
-    "豆腐をさいの目に切り、わかめを戻して入れる。",
-    "味噌を溶き入れて軽く温める（煮立てすぎない）。",
-    "ねぎを散らす。"
-   ],
-   "minutes": 10,
-   "tags": [
-    "genre.washoku",
-    "form.soup",
-    "main.tofu",
-    "scene.school"
-   ]
-  },
-  {
-   "id": "r03",
-   "name": "カレーライス",
-   "ingredients": [
+  ],
+  "ingredients": [
     {
-     "id": "curry_roux",
-     "amount": "1/2箱分"
+      "id": "potato",
+      "name": "じゃがいも",
+      "category": "野菜"
     },
     {
-     "id": "potato",
-     "amount": "1個"
+      "id": "carrot",
+      "name": "にんじん",
+      "category": "野菜"
     },
     {
-     "id": "carrot",
-     "amount": "1/2本"
+      "id": "onion",
+      "name": "玉ねぎ",
+      "category": "野菜"
     },
     {
-     "id": "onion",
-     "amount": "1個"
+      "id": "cabbage",
+      "name": "キャベツ",
+      "category": "野菜"
     },
     {
-     "id": "pork_slices",
-     "amount": "150g"
+      "id": "bean_sprouts",
+      "name": "もやし",
+      "category": "野菜"
     },
     {
-     "id": "rice",
-     "amount": "適量"
+      "id": "lotus_root",
+      "name": "れんこん",
+      "category": "野菜"
+    },
+    {
+      "id": "burdock",
+      "name": "ごぼう",
+      "category": "野菜"
+    },
+    {
+      "id": "spinach",
+      "name": "ほうれん草",
+      "category": "野菜"
+    },
+    {
+      "id": "lettuce",
+      "name": "レタス",
+      "category": "野菜"
+    },
+    {
+      "id": "cucumber",
+      "name": "きゅうり",
+      "category": "野菜"
+    },
+    {
+      "id": "tomato",
+      "name": "トマト",
+      "category": "野菜"
+    },
+    {
+      "id": "green_onion",
+      "name": "ねぎ",
+      "category": "野菜"
+    },
+    {
+      "id": "ginger",
+      "name": "生姜",
+      "category": "野菜"
+    },
+    {
+      "id": "garlic",
+      "name": "にんにく",
+      "category": "野菜"
+    },
+    {
+      "id": "daikon",
+      "name": "大根",
+      "category": "野菜"
+    },
+    {
+      "id": "pork_slices",
+      "name": "豚こま切れ肉",
+      "category": "肉"
+    },
+    {
+      "id": "pork_loin",
+      "name": "豚ロース肉",
+      "category": "肉"
+    },
+    {
+      "id": "chicken_thigh",
+      "name": "鶏もも肉",
+      "category": "肉"
+    },
+    {
+      "id": "mixed_mince",
+      "name": "合いびき肉",
+      "category": "肉"
+    },
+    {
+      "id": "pork_mince",
+      "name": "豚ひき肉",
+      "category": "肉"
+    },
+    {
+      "id": "ham",
+      "name": "ハム",
+      "category": "肉"
+    },
+    {
+      "id": "salmon",
+      "name": "鮭",
+      "category": "魚介・海藻"
+    },
+    {
+      "id": "katsuobushi",
+      "name": "かつお節",
+      "category": "魚介・海藻"
+    },
+    {
+      "id": "wakame",
+      "name": "わかめ",
+      "category": "魚介・海藻"
+    },
+    {
+      "id": "egg",
+      "name": "卵",
+      "category": "卵・乳製品"
+    },
+    {
+      "id": "milk",
+      "name": "牛乳",
+      "category": "卵・乳製品"
+    },
+    {
+      "id": "tofu",
+      "name": "豆腐",
+      "category": "大豆・加工品"
+    },
+    {
+      "id": "konjac",
+      "name": "こんにゃく",
+      "category": "大豆・加工品"
+    },
+    {
+      "id": "shirataki",
+      "name": "しらたき",
+      "category": "大豆・加工品"
+    },
+    {
+      "id": "dried_shiitake",
+      "name": "干し椎茸",
+      "category": "大豆・加工品"
+    },
+    {
+      "id": "soy_sauce",
+      "name": "醤油",
+      "category": "調味料"
+    },
+    {
+      "id": "mirin",
+      "name": "みりん",
+      "category": "調味料"
+    },
+    {
+      "id": "sugar",
+      "name": "砂糖",
+      "category": "調味料"
+    },
+    {
+      "id": "salt_pepper",
+      "name": "塩こしょう",
+      "category": "調味料"
+    },
+    {
+      "id": "miso",
+      "name": "味噌",
+      "category": "調味料"
+    },
+    {
+      "id": "sake",
+      "name": "酒",
+      "category": "調味料"
+    },
+    {
+      "id": "dashi",
+      "name": "だし汁",
+      "category": "調味料"
+    },
+    {
+      "id": "curry_roux",
+      "name": "カレールー",
+      "category": "調味料"
+    },
+    {
+      "id": "doubanjiang",
+      "name": "豆板醤",
+      "category": "調味料"
+    },
+    {
+      "id": "chicken_stock",
+      "name": "鶏がらスープ",
+      "category": "調味料"
+    },
+    {
+      "id": "potato_starch",
+      "name": "片栗粉",
+      "category": "調味料"
+    },
+    {
+      "id": "dressing",
+      "name": "ドレッシング",
+      "category": "調味料"
+    },
+    {
+      "id": "sesame_oil",
+      "name": "ごま油",
+      "category": "調味料"
+    },
+    {
+      "id": "white_sesame",
+      "name": "白いりごま",
+      "category": "調味料"
+    },
+    {
+      "id": "bread_crumbs",
+      "name": "パン粉",
+      "category": "調味料"
+    },
+    {
+      "id": "rice",
+      "name": "ご飯",
+      "category": "主食"
     }
-   ],
-   "steps": [
-    "野菜と肉を一口大に切る。",
-    "鍋で肉と野菜を炒め、水400mlを加えて煮込む。",
-    "具が柔らかくなったらルーを溶き入れ、とろみがつくまで煮る。",
-    "ご飯にかけて食べる。"
-   ],
-   "minutes": 40,
-   "tags": [
-    "genre.yoshoku",
-    "form.rice",
-    "main.meat",
-    "main.vegetable",
-    "method.simmer",
-    "scene.school"
-   ]
-  },
-  {
-   "id": "r04",
-   "name": "ハンバーグ",
-   "ingredients": [
+  ],
+  "recipes": [
     {
-     "id": "mixed_mince",
-     "amount": "200g"
+      "id": "r01",
+      "name": "肉じゃが",
+      "ingredients": [
+        {
+          "id": "potato",
+          "amount": "2個"
+        },
+        {
+          "id": "carrot",
+          "amount": "1/2本"
+        },
+        {
+          "id": "onion",
+          "amount": "1個"
+        },
+        {
+          "id": "pork_slices",
+          "amount": "150g"
+        },
+        {
+          "id": "shirataki",
+          "amount": "適量"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "mirin",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "sugar",
+          "amount": "大さじ1"
+        },
+        {
+          "id": "dashi",
+          "amount": "200ml"
+        }
+      ],
+      "steps": [
+        "野菜を乱切り、豚肉は食べやすい大きさに切る。",
+        "鍋に油を熱し、豚肉を炒めて色が変わったら野菜を加える。",
+        "だし汁と調味料を入れて煮立て、落し蓋をして弱火で15分ほど煮る。",
+        "味を見て整え、火を止める。"
+      ],
+      "minutes": 30,
+      "tags": [
+        "genre.washoku",
+        "form.teishoku",
+        "main.meat",
+        "main.vegetable",
+        "method.simmer",
+        "scene.classic"
+      ]
     },
     {
-     "id": "onion",
-     "amount": "1/2個"
+      "id": "r02",
+      "name": "味噌汁",
+      "ingredients": [
+        {
+          "id": "dashi",
+          "amount": "400ml"
+        },
+        {
+          "id": "miso",
+          "amount": "大さじ2弱"
+        },
+        {
+          "id": "tofu",
+          "amount": "1/4丁"
+        },
+        {
+          "id": "wakame",
+          "amount": "適量"
+        },
+        {
+          "id": "green_onion",
+          "amount": "適量"
+        }
+      ],
+      "steps": [
+        "だし汁を温める。",
+        "豆腐をさいの目に切り、わかめを戻して入れる。",
+        "味噌を溶き入れて軽く温める（煮立てすぎない）。",
+        "ねぎを散らす。"
+      ],
+      "minutes": 10,
+      "tags": ["genre.washoku", "form.soup", "main.tofu", "scene.school"]
     },
     {
-     "id": "bread_crumbs",
-     "amount": "大さじ3"
+      "id": "r03",
+      "name": "カレーライス",
+      "ingredients": [
+        {
+          "id": "curry_roux",
+          "amount": "1/2箱分"
+        },
+        {
+          "id": "potato",
+          "amount": "1個"
+        },
+        {
+          "id": "carrot",
+          "amount": "1/2本"
+        },
+        {
+          "id": "onion",
+          "amount": "1個"
+        },
+        {
+          "id": "pork_slices",
+          "amount": "150g"
+        },
+        {
+          "id": "rice",
+          "amount": "適量"
+        }
+      ],
+      "steps": [
+        "野菜と肉を一口大に切る。",
+        "鍋で肉と野菜を炒め、水400mlを加えて煮込む。",
+        "具が柔らかくなったらルーを溶き入れ、とろみがつくまで煮る。",
+        "ご飯にかけて食べる。"
+      ],
+      "minutes": 40,
+      "tags": [
+        "genre.yoshoku",
+        "form.rice",
+        "main.meat",
+        "main.vegetable",
+        "method.simmer",
+        "scene.school"
+      ]
     },
     {
-     "id": "milk",
-     "amount": "大さじ2"
+      "id": "r04",
+      "name": "ハンバーグ",
+      "ingredients": [
+        {
+          "id": "mixed_mince",
+          "amount": "200g"
+        },
+        {
+          "id": "onion",
+          "amount": "1/2個"
+        },
+        {
+          "id": "bread_crumbs",
+          "amount": "大さじ3"
+        },
+        {
+          "id": "milk",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "egg",
+          "amount": "1個"
+        },
+        {
+          "id": "salt_pepper",
+          "amount": "少々"
+        }
+      ],
+      "steps": [
+        "玉ねぎをみじん切りにして軽く炒め、冷ます。",
+        "ボウルに材料をすべて入れて粘りが出るまで混ぜる。",
+        "楕円形に成形し、真ん中を少しへこませる。",
+        "フライパンで両面を焼き、蓋をして中まで火を通す。"
+      ],
+      "minutes": 30,
+      "tags": ["genre.yoshoku", "form.teishoku", "main.meat", "method.grill", "scene.classic"]
     },
     {
-     "id": "egg",
-     "amount": "1個"
+      "id": "r05",
+      "name": "野菜炒め",
+      "ingredients": [
+        {
+          "id": "cabbage",
+          "amount": "1/4個"
+        },
+        {
+          "id": "carrot",
+          "amount": "1/3本"
+        },
+        {
+          "id": "bean_sprouts",
+          "amount": "1袋"
+        },
+        {
+          "id": "pork_slices",
+          "amount": "100g"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "大さじ1"
+        },
+        {
+          "id": "salt_pepper",
+          "amount": "少々"
+        }
+      ],
+      "steps": [
+        "野菜を食べやすい大きさに切る。",
+        "フライパンで豚肉を炒め、野菜を加えてさっと炒める。",
+        "醤油と塩こしょうで味を調える。"
+      ],
+      "minutes": 15,
+      "tags": ["form.teishoku", "main.meat", "main.vegetable", "method.stir_fry", "scene.quick"]
     },
     {
-     "id": "salt_pepper",
-     "amount": "少々"
+      "id": "r06",
+      "name": "卵焼き",
+      "ingredients": [
+        {
+          "id": "egg",
+          "amount": "3個"
+        },
+        {
+          "id": "dashi",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "小さじ1"
+        },
+        {
+          "id": "sugar",
+          "amount": "小さじ1"
+        }
+      ],
+      "steps": [
+        "卵を溶き、調味料を混ぜる。",
+        "フライパンに油を引き、卵液を流し入れて焼く。",
+        "手前から巻いていき、残りの卵液を足しながら繰り返す。",
+        "形を整えて切る。"
+      ],
+      "minutes": 10,
+      "tags": ["genre.washoku", "form.side", "main.egg", "method.grill", "scene.quick"]
+    },
+    {
+      "id": "r07",
+      "name": "筑前煮",
+      "ingredients": [
+        {
+          "id": "chicken_thigh",
+          "amount": "150g"
+        },
+        {
+          "id": "lotus_root",
+          "amount": "100g"
+        },
+        {
+          "id": "carrot",
+          "amount": "1/2本"
+        },
+        {
+          "id": "konjac",
+          "amount": "1/2枚"
+        },
+        {
+          "id": "dried_shiitake",
+          "amount": "2枚"
+        },
+        {
+          "id": "dashi",
+          "amount": "300ml"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "mirin",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "sugar",
+          "amount": "大さじ1"
+        }
+      ],
+      "steps": [
+        "具材を食べやすい大きさに切る。",
+        "鍋に油を熱し、鶏肉を炒めてから他の具材を加える。",
+        "だし汁と調味料を入れて煮立て、落し蓋をして15〜20分煮る。"
+      ],
+      "minutes": 35,
+      "tags": [
+        "genre.washoku",
+        "form.side",
+        "main.meat",
+        "main.vegetable",
+        "method.simmer",
+        "region.kyushu",
+        "scene.local"
+      ]
+    },
+    {
+      "id": "r08",
+      "name": "親子丼",
+      "ingredients": [
+        {
+          "id": "chicken_thigh",
+          "amount": "150g"
+        },
+        {
+          "id": "onion",
+          "amount": "1/2個"
+        },
+        {
+          "id": "egg",
+          "amount": "3個"
+        },
+        {
+          "id": "dashi",
+          "amount": "150ml"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "mirin",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "rice",
+          "amount": "適量"
+        }
+      ],
+      "steps": [
+        "鶏肉と玉ねぎを切る。",
+        "鍋にだし汁と調味料を入れて煮立て、鶏肉と玉ねぎを入れて煮る。",
+        "溶き卵を回し入れ、半熟状になったら火を止める。",
+        "ご飯にのせる。"
+      ],
+      "minutes": 20,
+      "tags": [
+        "genre.washoku",
+        "form.donburi",
+        "main.meat",
+        "main.egg",
+        "method.simmer",
+        "scene.classic"
+      ]
+    },
+    {
+      "id": "r09",
+      "name": "きんぴらごぼう",
+      "ingredients": [
+        {
+          "id": "burdock",
+          "amount": "1本"
+        },
+        {
+          "id": "carrot",
+          "amount": "1/3本"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "大さじ1.5"
+        },
+        {
+          "id": "mirin",
+          "amount": "大さじ1"
+        },
+        {
+          "id": "sugar",
+          "amount": "小さじ1"
+        },
+        {
+          "id": "sesame_oil",
+          "amount": "適量"
+        },
+        {
+          "id": "white_sesame",
+          "amount": "適量"
+        }
+      ],
+      "steps": [
+        "ごぼうとにんじんを細切りにし、ごぼうは水にさらす。",
+        "フライパンにごま油を熱し、野菜を炒める。",
+        "調味料を加えて水分がなくなるまで炒め煮する。",
+        "ごまを振る。"
+      ],
+      "minutes": 15,
+      "tags": ["genre.washoku", "form.side", "main.vegetable", "method.stir_fry"]
+    },
+    {
+      "id": "r10",
+      "name": "基本の野菜サラダ",
+      "ingredients": [
+        {
+          "id": "lettuce",
+          "amount": "適量"
+        },
+        {
+          "id": "cucumber",
+          "amount": "1/2本"
+        },
+        {
+          "id": "tomato",
+          "amount": "1個"
+        },
+        {
+          "id": "dressing",
+          "amount": "適量"
+        }
+      ],
+      "steps": [
+        "野菜を洗い、食べやすい大きさに切る。",
+        "器に盛り、食べる直前にドレッシングをかける。"
+      ],
+      "minutes": 5,
+      "tags": ["genre.yoshoku", "form.side", "main.vegetable", "scene.quick"]
+    },
+    {
+      "id": "r11",
+      "name": "鮭の塩焼き",
+      "ingredients": [
+        {
+          "id": "salmon",
+          "amount": "2切れ"
+        },
+        {
+          "id": "salt_pepper",
+          "amount": "少々"
+        },
+        {
+          "id": "daikon",
+          "amount": "適量"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "適量"
+        }
+      ],
+      "steps": [
+        "鮭に軽く塩を振る。",
+        "グリルまたはフライパンで両面を焼く。",
+        "大根おろしを添えて食べる。"
+      ],
+      "minutes": 15,
+      "tags": [
+        "genre.washoku",
+        "form.teishoku",
+        "main.fish",
+        "method.grill",
+        "scene.quick",
+        "scene.school"
+      ]
+    },
+    {
+      "id": "r12",
+      "name": "麻婆豆腐（簡易版）",
+      "ingredients": [
+        {
+          "id": "tofu",
+          "amount": "1丁"
+        },
+        {
+          "id": "pork_mince",
+          "amount": "100g"
+        },
+        {
+          "id": "green_onion",
+          "amount": "1/2本"
+        },
+        {
+          "id": "garlic",
+          "amount": "少々"
+        },
+        {
+          "id": "ginger",
+          "amount": "少々"
+        },
+        {
+          "id": "doubanjiang",
+          "amount": "小さじ1"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "大さじ1"
+        },
+        {
+          "id": "chicken_stock",
+          "amount": "150ml"
+        },
+        {
+          "id": "potato_starch",
+          "amount": "適量"
+        }
+      ],
+      "steps": [
+        "ひき肉を炒め、香味野菜と豆板醤を加える。",
+        "スープと醤油を入れて煮立て、豆腐を加える。",
+        "水溶き片栗粉でとろみをつける。"
+      ],
+      "minutes": 20,
+      "tags": ["genre.chuka", "form.teishoku", "main.meat", "main.tofu", "method.simmer"]
+    },
+    {
+      "id": "r13",
+      "name": "チャーハン",
+      "ingredients": [
+        {
+          "id": "rice",
+          "amount": "茶碗2杯分"
+        },
+        {
+          "id": "egg",
+          "amount": "2個"
+        },
+        {
+          "id": "green_onion",
+          "amount": "適量"
+        },
+        {
+          "id": "ham",
+          "amount": "適量"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "大さじ1"
+        },
+        {
+          "id": "salt_pepper",
+          "amount": "少々"
+        }
+      ],
+      "steps": [
+        "卵を溶いておく。",
+        "フライパンで具材を炒め、ご飯を加えてほぐす。",
+        "卵を回し入れ、醤油と塩こしょうで味を調える。"
+      ],
+      "minutes": 10,
+      "tags": ["genre.chuka", "form.rice", "main.egg", "method.stir_fry", "scene.quick"]
+    },
+    {
+      "id": "r14",
+      "name": "ほうれん草のおひたし",
+      "ingredients": [
+        {
+          "id": "spinach",
+          "amount": "1束"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "小さじ2"
+        },
+        {
+          "id": "dashi",
+          "amount": "大さじ1"
+        },
+        {
+          "id": "katsuobushi",
+          "amount": "適量"
+        }
+      ],
+      "steps": [
+        "ほうれん草を茹でて冷水に取り、水気を切る。",
+        "食べやすい長さに切る。",
+        "醤油とだしを混ぜてかけ、かつお節をのせる。"
+      ],
+      "minutes": 10,
+      "tags": ["genre.washoku", "form.side", "main.vegetable", "scene.school"]
+    },
+    {
+      "id": "r15",
+      "name": "豚の生姜焼き",
+      "ingredients": [
+        {
+          "id": "pork_loin",
+          "amount": "200g"
+        },
+        {
+          "id": "onion",
+          "amount": "1/2個"
+        },
+        {
+          "id": "ginger",
+          "amount": "1かけ"
+        },
+        {
+          "id": "soy_sauce",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "mirin",
+          "amount": "大さじ2"
+        },
+        {
+          "id": "sake",
+          "amount": "大さじ1"
+        },
+        {
+          "id": "sugar",
+          "amount": "小さじ1"
+        }
+      ],
+      "steps": [
+        "生姜をすりおろし、調味料と混ぜる。",
+        "フライパンで豚肉を焼き、玉ねぎを加えて炒める。",
+        "合わせ調味料を回し入れて絡める。"
+      ],
+      "minutes": 15,
+      "tags": ["genre.washoku", "form.teishoku", "main.meat", "method.stir_fry", "scene.classic"]
     }
-   ],
-   "steps": [
-    "玉ねぎをみじん切りにして軽く炒め、冷ます。",
-    "ボウルに材料をすべて入れて粘りが出るまで混ぜる。",
-    "楕円形に成形し、真ん中を少しへこませる。",
-    "フライパンで両面を焼き、蓋をして中まで火を通す。"
-   ],
-   "minutes": 30,
-   "tags": [
-    "genre.yoshoku",
-    "form.teishoku",
-    "main.meat",
-    "method.grill",
-    "scene.classic"
-   ]
-  },
-  {
-   "id": "r05",
-   "name": "野菜炒め",
-   "ingredients": [
-    {
-     "id": "cabbage",
-     "amount": "1/4個"
-    },
-    {
-     "id": "carrot",
-     "amount": "1/3本"
-    },
-    {
-     "id": "bean_sprouts",
-     "amount": "1袋"
-    },
-    {
-     "id": "pork_slices",
-     "amount": "100g"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "大さじ1"
-    },
-    {
-     "id": "salt_pepper",
-     "amount": "少々"
-    }
-   ],
-   "steps": [
-    "野菜を食べやすい大きさに切る。",
-    "フライパンで豚肉を炒め、野菜を加えてさっと炒める。",
-    "醤油と塩こしょうで味を調える。"
-   ],
-   "minutes": 15,
-   "tags": [
-    "form.teishoku",
-    "main.meat",
-    "main.vegetable",
-    "method.stir_fry",
-    "scene.quick"
-   ]
-  },
-  {
-   "id": "r06",
-   "name": "卵焼き",
-   "ingredients": [
-    {
-     "id": "egg",
-     "amount": "3個"
-    },
-    {
-     "id": "dashi",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "小さじ1"
-    },
-    {
-     "id": "sugar",
-     "amount": "小さじ1"
-    }
-   ],
-   "steps": [
-    "卵を溶き、調味料を混ぜる。",
-    "フライパンに油を引き、卵液を流し入れて焼く。",
-    "手前から巻いていき、残りの卵液を足しながら繰り返す。",
-    "形を整えて切る。"
-   ],
-   "minutes": 10,
-   "tags": [
-    "genre.washoku",
-    "form.side",
-    "main.egg",
-    "method.grill",
-    "scene.quick"
-   ]
-  },
-  {
-   "id": "r07",
-   "name": "筑前煮",
-   "ingredients": [
-    {
-     "id": "chicken_thigh",
-     "amount": "150g"
-    },
-    {
-     "id": "lotus_root",
-     "amount": "100g"
-    },
-    {
-     "id": "carrot",
-     "amount": "1/2本"
-    },
-    {
-     "id": "konjac",
-     "amount": "1/2枚"
-    },
-    {
-     "id": "dried_shiitake",
-     "amount": "2枚"
-    },
-    {
-     "id": "dashi",
-     "amount": "300ml"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "mirin",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "sugar",
-     "amount": "大さじ1"
-    }
-   ],
-   "steps": [
-    "具材を食べやすい大きさに切る。",
-    "鍋に油を熱し、鶏肉を炒めてから他の具材を加える。",
-    "だし汁と調味料を入れて煮立て、落し蓋をして15〜20分煮る。"
-   ],
-   "minutes": 35,
-   "tags": [
-    "genre.washoku",
-    "form.side",
-    "main.meat",
-    "main.vegetable",
-    "method.simmer",
-    "region.kyushu",
-    "scene.local"
-   ]
-  },
-  {
-   "id": "r08",
-   "name": "親子丼",
-   "ingredients": [
-    {
-     "id": "chicken_thigh",
-     "amount": "150g"
-    },
-    {
-     "id": "onion",
-     "amount": "1/2個"
-    },
-    {
-     "id": "egg",
-     "amount": "3個"
-    },
-    {
-     "id": "dashi",
-     "amount": "150ml"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "mirin",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "rice",
-     "amount": "適量"
-    }
-   ],
-   "steps": [
-    "鶏肉と玉ねぎを切る。",
-    "鍋にだし汁と調味料を入れて煮立て、鶏肉と玉ねぎを入れて煮る。",
-    "溶き卵を回し入れ、半熟状になったら火を止める。",
-    "ご飯にのせる。"
-   ],
-   "minutes": 20,
-   "tags": [
-    "genre.washoku",
-    "form.donburi",
-    "main.meat",
-    "main.egg",
-    "method.simmer",
-    "scene.classic"
-   ]
-  },
-  {
-   "id": "r09",
-   "name": "きんぴらごぼう",
-   "ingredients": [
-    {
-     "id": "burdock",
-     "amount": "1本"
-    },
-    {
-     "id": "carrot",
-     "amount": "1/3本"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "大さじ1.5"
-    },
-    {
-     "id": "mirin",
-     "amount": "大さじ1"
-    },
-    {
-     "id": "sugar",
-     "amount": "小さじ1"
-    },
-    {
-     "id": "sesame_oil",
-     "amount": "適量"
-    },
-    {
-     "id": "white_sesame",
-     "amount": "適量"
-    }
-   ],
-   "steps": [
-    "ごぼうとにんじんを細切りにし、ごぼうは水にさらす。",
-    "フライパンにごま油を熱し、野菜を炒める。",
-    "調味料を加えて水分がなくなるまで炒め煮する。",
-    "ごまを振る。"
-   ],
-   "minutes": 15,
-   "tags": [
-    "genre.washoku",
-    "form.side",
-    "main.vegetable",
-    "method.stir_fry"
-   ]
-  },
-  {
-   "id": "r10",
-   "name": "基本の野菜サラダ",
-   "ingredients": [
-    {
-     "id": "lettuce",
-     "amount": "適量"
-    },
-    {
-     "id": "cucumber",
-     "amount": "1/2本"
-    },
-    {
-     "id": "tomato",
-     "amount": "1個"
-    },
-    {
-     "id": "dressing",
-     "amount": "適量"
-    }
-   ],
-   "steps": [
-    "野菜を洗い、食べやすい大きさに切る。",
-    "器に盛り、食べる直前にドレッシングをかける。"
-   ],
-   "minutes": 5,
-   "tags": [
-    "genre.yoshoku",
-    "form.side",
-    "main.vegetable",
-    "scene.quick"
-   ]
-  },
-  {
-   "id": "r11",
-   "name": "鮭の塩焼き",
-   "ingredients": [
-    {
-     "id": "salmon",
-     "amount": "2切れ"
-    },
-    {
-     "id": "salt_pepper",
-     "amount": "少々"
-    },
-    {
-     "id": "daikon",
-     "amount": "適量"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "適量"
-    }
-   ],
-   "steps": [
-    "鮭に軽く塩を振る。",
-    "グリルまたはフライパンで両面を焼く。",
-    "大根おろしを添えて食べる。"
-   ],
-   "minutes": 15,
-   "tags": [
-    "genre.washoku",
-    "form.teishoku",
-    "main.fish",
-    "method.grill",
-    "scene.quick",
-    "scene.school"
-   ]
-  },
-  {
-   "id": "r12",
-   "name": "麻婆豆腐（簡易版）",
-   "ingredients": [
-    {
-     "id": "tofu",
-     "amount": "1丁"
-    },
-    {
-     "id": "pork_mince",
-     "amount": "100g"
-    },
-    {
-     "id": "green_onion",
-     "amount": "1/2本"
-    },
-    {
-     "id": "garlic",
-     "amount": "少々"
-    },
-    {
-     "id": "ginger",
-     "amount": "少々"
-    },
-    {
-     "id": "doubanjiang",
-     "amount": "小さじ1"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "大さじ1"
-    },
-    {
-     "id": "chicken_stock",
-     "amount": "150ml"
-    },
-    {
-     "id": "potato_starch",
-     "amount": "適量"
-    }
-   ],
-   "steps": [
-    "ひき肉を炒め、香味野菜と豆板醤を加える。",
-    "スープと醤油を入れて煮立て、豆腐を加える。",
-    "水溶き片栗粉でとろみをつける。"
-   ],
-   "minutes": 20,
-   "tags": [
-    "genre.chuka",
-    "form.teishoku",
-    "main.meat",
-    "main.tofu",
-    "method.simmer"
-   ]
-  },
-  {
-   "id": "r13",
-   "name": "チャーハン",
-   "ingredients": [
-    {
-     "id": "rice",
-     "amount": "茶碗2杯分"
-    },
-    {
-     "id": "egg",
-     "amount": "2個"
-    },
-    {
-     "id": "green_onion",
-     "amount": "適量"
-    },
-    {
-     "id": "ham",
-     "amount": "適量"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "大さじ1"
-    },
-    {
-     "id": "salt_pepper",
-     "amount": "少々"
-    }
-   ],
-   "steps": [
-    "卵を溶いておく。",
-    "フライパンで具材を炒め、ご飯を加えてほぐす。",
-    "卵を回し入れ、醤油と塩こしょうで味を調える。"
-   ],
-   "minutes": 10,
-   "tags": [
-    "genre.chuka",
-    "form.rice",
-    "main.egg",
-    "method.stir_fry",
-    "scene.quick"
-   ]
-  },
-  {
-   "id": "r14",
-   "name": "ほうれん草のおひたし",
-   "ingredients": [
-    {
-     "id": "spinach",
-     "amount": "1束"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "小さじ2"
-    },
-    {
-     "id": "dashi",
-     "amount": "大さじ1"
-    },
-    {
-     "id": "katsuobushi",
-     "amount": "適量"
-    }
-   ],
-   "steps": [
-    "ほうれん草を茹でて冷水に取り、水気を切る。",
-    "食べやすい長さに切る。",
-    "醤油とだしを混ぜてかけ、かつお節をのせる。"
-   ],
-   "minutes": 10,
-   "tags": [
-    "genre.washoku",
-    "form.side",
-    "main.vegetable",
-    "scene.school"
-   ]
-  },
-  {
-   "id": "r15",
-   "name": "豚の生姜焼き",
-   "ingredients": [
-    {
-     "id": "pork_loin",
-     "amount": "200g"
-    },
-    {
-     "id": "onion",
-     "amount": "1/2個"
-    },
-    {
-     "id": "ginger",
-     "amount": "1かけ"
-    },
-    {
-     "id": "soy_sauce",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "mirin",
-     "amount": "大さじ2"
-    },
-    {
-     "id": "sake",
-     "amount": "大さじ1"
-    },
-    {
-     "id": "sugar",
-     "amount": "小さじ1"
-    }
-   ],
-   "steps": [
-    "生姜をすりおろし、調味料と混ぜる。",
-    "フライパンで豚肉を焼き、玉ねぎを加えて炒める。",
-    "合わせ調味料を回し入れて絡める。"
-   ],
-   "minutes": 15,
-   "tags": [
-    "genre.washoku",
-    "form.teishoku",
-    "main.meat",
-    "method.stir_fry",
-    "scene.classic"
-   ]
-  }
- ]
+  ]
 }

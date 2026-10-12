@@ -1,9 +1,12 @@
-import base from './data/base.json';
-import type { Pack } from './types';
+import base from "./data/base.json";
+import type { Pack } from "./types";
 
 // src/lib/data/packs/*.json に置いたパックは自動で読み込まれる
 const extraPacks = Object.values(
-  import.meta.glob<Pack>('./data/packs/*.json', { eager: true, import: 'default' }),
+  import.meta.glob<Pack>("./data/packs/*.json", {
+    eager: true,
+    import: "default",
+  }),
 );
 
 export const packs: Pack[] = [base as Pack, ...extraPacks];

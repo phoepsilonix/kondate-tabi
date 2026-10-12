@@ -5,7 +5,7 @@ export interface KeyValueStore {
   set(key: string, value: unknown): void;
 }
 
-const PREFIX = 'kondate-tabi:';
+const PREFIX = "kondate-tabi:";
 
 export const localStore: KeyValueStore = {
   get<T>(key: string, fallback: T): T {

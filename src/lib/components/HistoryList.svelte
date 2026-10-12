@@ -1,14 +1,14 @@
 <script lang="ts">
-  import { daysLabel, daysSince } from '../history';
-  import type { HistoryEntry, Recipe } from '../types';
+import { daysLabel, daysSince } from "../history";
+import type { HistoryEntry, Recipe } from "../types";
 
-  interface Props {
-    entries: HistoryEntry[];
-    recipes: Map<string, Recipe>;
-    onopen: (recipe: Recipe) => void;
-    onremove: (id: string) => void;
-  }
-  let { entries, recipes, onopen, onremove }: Props = $props();
+interface Props {
+	entries: HistoryEntry[];
+	recipes: Map<string, Recipe>;
+	onopen: (recipe: Recipe) => void;
+	onremove: (id: string) => void;
+}
+let { entries, recipes, onopen, onremove }: Props = $props();
 </script>
 
 {#if entries.length === 0}

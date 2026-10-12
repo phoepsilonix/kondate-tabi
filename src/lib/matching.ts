@@ -1,6 +1,6 @@
-import type { Ingredient, MatchOptions, MatchResult, Recipe } from './types';
+import type { Ingredient, MatchOptions, MatchResult, Recipe } from "./types";
 
-const SEASONING = '調味料';
+const SEASONING = "調味料";
 
 /**
  * 選択された具材 id とレシピのマッチ度を計算する純粋関数。

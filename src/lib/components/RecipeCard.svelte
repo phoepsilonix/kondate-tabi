@@ -1,19 +1,22 @@
 <script lang="ts">
-  import type { Recipe } from '../types';
+import type { Recipe } from "../types";
 
-  interface Props {
-    recipe: Recipe;
-    names: Map<string, string>;
-    missing?: string[];
-    /** 補足（例: 3日前に作った） */
-    note?: string;
-    onselect: (recipe: Recipe) => void;
-  }
-  let { recipe, names, missing, note, onselect }: Props = $props();
+interface Props {
+	recipe: Recipe;
+	names: Map<string, string>;
+	missing?: string[];
+	/** 補足（例: 3日前に作った） */
+	note?: string;
+	onselect: (recipe: Recipe) => void;
+}
+let { recipe, names, missing, note, onselect }: Props = $props();
 
-  const main = $derived(
-    recipe.ingredients.slice(0, 4).map((i) => names.get(i.id) ?? i.id).join('、'),
-  );
+const main = $derived(
+	recipe.ingredients
+		.slice(0, 4)
+		.map((i) => names.get(i.id) ?? i.id)
+		.join("、"),
+);
 </script>
 
 <button class="card" onclick={() => onselect(recipe)}>

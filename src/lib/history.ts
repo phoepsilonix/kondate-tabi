@@ -1,4 +1,4 @@
-import type { HistoryEntry, Recipe } from './types';
+import type { HistoryEntry, Recipe } from "./types";
 
 const DAY_MS = 24 * 60 * 60 * 1000;
 
@@ -18,7 +18,7 @@ export function daysSince(ms: number, now: number = Date.now()): number {
 }
 
 export function daysLabel(days: number): string {
-  return days === 0 ? '今日' : `${days}日前`;
+  return days === 0 ? "今日" : `${days}日前`;
 }
 
 /**

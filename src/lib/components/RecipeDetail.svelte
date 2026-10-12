@@ -1,16 +1,16 @@
 <script lang="ts">
-  import type { Recipe } from '../types';
+import type { Recipe } from "../types";
 
-  interface Props {
-    recipe: Recipe;
-    names: Map<string, string>;
-    tagNames: Map<string, string>;
-    /** 前回作った日の表示（なければ undefined） */
-    lastMade?: string;
-    onmade: (recipe: Recipe) => void;
-    onclose: () => void;
-  }
-  let { recipe, names, tagNames, lastMade, onmade, onclose }: Props = $props();
+interface Props {
+	recipe: Recipe;
+	names: Map<string, string>;
+	tagNames: Map<string, string>;
+	/** 前回作った日の表示（なければ undefined） */
+	lastMade?: string;
+	onmade: (recipe: Recipe) => void;
+	onclose: () => void;
+}
+let { recipe, names, tagNames, lastMade, onmade, onclose }: Props = $props();
 </script>
 
 <section class="detail">

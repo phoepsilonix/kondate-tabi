@@ -1,54 +1,74 @@
 <script lang="ts">
-  import { facets, tags, tagsById, tagName, ingredients, recipes, ingredientName } from './lib/data';
-  import { matchRecipes } from './lib/matching';
-  import { filterByTags } from './lib/filter';
-  import type { Recipe, ResultRow } from './lib/types';
-  import IngredientPicker from './lib/components/IngredientPicker.svelte';
-  import SelectedTags from './lib/components/SelectedTags.svelte';
-  import TagFilter from './lib/components/TagFilter.svelte';
-  import RecipeCard from './lib/components/RecipeCard.svelte';
-  import RecipeDetail from './lib/components/RecipeDetail.svelte';
-  import Gacha from './lib/components/Gacha.svelte';
-  import HistoryList from './lib/components/HistoryList.svelte';
-  import { pantry, history } from './lib/store.svelte';
-  import { daysLabel, daysSince, historyWeights, lastMadeAt } from './lib/history';
+import Gacha from "./lib/components/Gacha.svelte";
+import HistoryList from "./lib/components/HistoryList.svelte";
+import IngredientPicker from "./lib/components/IngredientPicker.svelte";
+import RecipeCard from "./lib/components/RecipeCard.svelte";
+import RecipeDetail from "./lib/components/RecipeDetail.svelte";
+import SelectedTags from "./lib/components/SelectedTags.svelte";
+import TagFilter from "./lib/components/TagFilter.svelte";
+import {
+	facets,
+	ingredientName,
+	ingredients,
+	recipes,
+	tagName,
+	tags,
+	tagsById,
+} from "./lib/data";
+import { filterByTags } from "./lib/filter";
+import {
+	daysLabel,
+	daysSince,
+	historyWeights,
+	lastMadeAt,
+} from "./lib/history";
+import { matchRecipes } from "./lib/matching";
+import { history, pantry } from "./lib/store.svelte";
+import type { Recipe, ResultRow } from "./lib/types";
 
-  let tab = $state<'search' | 'gacha' | 'pantry' | 'history'>('search');
-  let selected = $state<string[]>([]);
-  let selectedTags = $state<string[]>([]);
-  let usePantry = $state(true);
-  let includeSeasonings = $state(false);
-  let maxMissing = $state(2);
-  let rows = $state<ResultRow[] | null>(null);
-  let opened = $state<Recipe | null>(null);
+let tab = $state<"search" | "gacha" | "pantry" | "history">("search");
+let selected = $state<string[]>([]);
+let selectedTags = $state<string[]>([]);
+let usePantry = $state(true);
+let includeSeasonings = $state(false);
+let maxMissing = $state(2);
+let rows = $state<ResultRow[] | null>(null);
+let opened = $state<Recipe | null>(null);
 
-  // タグ絞り込み後の候補（検索・ガチャ共通）
-  const pool = $derived(filterByTags(recipes, tagsById, selectedTags));
+// タグ絞り込み後の候補（検索・ガチャ共通）
+const pool = $derived(filterByTags(recipes, tagsById, selectedTags));
 
-  const tagCounts = new Map<string, number>();
-  for (const r of recipes) for (const t of r.tags) tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
+const tagCounts = new Map<string, number>();
+for (const r of recipes)
+	for (const t of r.tags) tagCounts.set(t, (tagCounts.get(t) ?? 0) + 1);
 
-  const recipeById = new Map(recipes.map((r) => [r.id, r]));
-  const last = $derived(lastMadeAt(history.entries));
-  const weights = $derived(historyWeights(recipes, history.entries));
-  // 検索に使う具材 = パントリー + 今回選んだもの
-  const effective = $derived(usePantry ? [...new Set([...pantry.ids, ...selected])] : selected);
+const recipeById = new Map(recipes.map((r) => [r.id, r]));
+const last = $derived(lastMadeAt(history.entries));
+const weights = $derived(historyWeights(recipes, history.entries));
+// 検索に使う具材 = パントリー + 今回選んだもの
+const effective = $derived(
+	usePantry ? [...new Set([...pantry.ids, ...selected])] : selected,
+);
 
-  const lastLabel = (id: string) => {
-    const t = last.get(id);
-    return t === undefined ? undefined : daysLabel(daysSince(t));
-  };
+const lastLabel = (id: string) => {
+	const t = last.get(id);
+	return t === undefined ? undefined : daysLabel(daysSince(t));
+};
 
-  const toggle = (list: string[], id: string) =>
-    list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
+const toggle = (list: string[], id: string) =>
+	list.includes(id) ? list.filter((x) => x !== id) : [...list, id];
 
-  function search() {
-    rows =
-      effective.length > 0
-        ? matchRecipes(effective, pool, ingredients, { maxMissing, includeSeasonings, weights })
-        : pool.map((recipe) => ({ recipe }));
-    opened = null;
-  }
+function search() {
+	rows =
+		effective.length > 0
+			? matchRecipes(effective, pool, ingredients, {
+					maxMissing,
+					includeSeasonings,
+					weights,
+				})
+			: pool.map((recipe) => ({ recipe }));
+	opened = null;
+}
 </script>
 
 <main>

@@ -1,10 +1,10 @@
 <script lang="ts">
-  interface Props {
-    selected: string[];
-    names: Map<string, string>;
-    onremove: (id: string) => void;
-  }
-  let { selected, names, onremove }: Props = $props();
+interface Props {
+	selected: string[];
+	names: Map<string, string>;
+	onremove: (id: string) => void;
+}
+let { selected, names, onremove }: Props = $props();
 </script>
 
 <div class="tags" aria-label="選択中の具材">
