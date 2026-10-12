@@ -146,3 +146,41 @@ ul.history li {
   align-items: center;
   margin: 0.4rem 0;
 }
+
+.panel {
+  background: #fff;
+  border: 1px solid #e3d8c6;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+.banner {
+  background: #fff6df;
+  border: 1px solid #e3c978;
+  border-radius: 8px;
+  padding: 0.75rem;
+  margin: 0.75rem 0;
+}
+.error {
+  color: #8a1f11;
+  background: #fdeceb;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+.ok {
+  color: #1f5a1f;
+  background: #e8f5e4;
+  border-radius: 8px;
+  padding: 0.5rem 0.75rem;
+}
+ul.packs {
+  list-style: none;
+  padding: 0;
+}
+ul.packs li {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+  margin: 0.4rem 0;
+}
