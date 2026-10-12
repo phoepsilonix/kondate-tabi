@@ -2,8 +2,20 @@
   "$schema": "./node_modules/@biomejs/biome/configuration_schema.json",
   "vcs": { "enabled": true, "clientKind": "git", "useIgnoreFile": true },
   "files": { "includes": ["**", "!pnpm-lock.yaml", "!src-tauri/gen", "!src-tauri/target"] },
-  "formatter": { "enabled": false },
+  "formatter": {
+    "enabled": true,
+    "indentStyle": "space",
+    "indentWidth": 2,
+    "lineWidth": 100,
+    "lineEnding": "lf"
+  },
+  "javascript": {
+    "formatter": { "quoteStyle": "double", "semicolons": "always", "trailingCommas": "all" }
+  },
   "linter": { "enabled": true },
   "assist": { "actions": { "source": { "organizeImports": "on" } } },
-  "html": { "experimentalFullSupportEnabled": true }
+  "html": {
+    "experimentalFullSupportEnabled": true,
+    "formatter": { "enabled": true, "indentScriptAndStyle": true }
+  }
 }

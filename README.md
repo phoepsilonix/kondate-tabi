@@ -58,3 +58,8 @@ src-tauri/              Tauri 2（find_matching_recipes コマンド）
 - **エクスポート／インポート**: 「データ」タブから、ファイルへの書き出し・読み込みができます（自動バックアップと同じ形式）。
 - 保存先ごとの違い（デスクトップ／Android／iOS）は `src/lib/ports.ts` の窓口に閉じ込めてあり、モバイル用の実装は未対応です。
 - テスト: `pnpm test`（バックアップ形式・世代管理・復旧判断・パック検証）
+
+## コードの整形とチェック
+
+- 整形・lint は Biome に統一しています（設定は `biome.json`）。`pnpm lint`（確認）、`pnpm lint:fix`（lint の自動修正と整形）、`pnpm format`（整形のみ）。
+- Biome の Svelte 対応は実験的です（`html.experimentalFullSupportEnabled`）。確認した範囲（2.5.14）では、テンプレート内の `{@const x = ...}` を壊すため使わないでください。整形後は `pnpm check` で壊れていないか確認できます。

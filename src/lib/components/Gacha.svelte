@@ -1,67 +1,69 @@
 <script lang="ts">
-import { onDestroy } from "svelte";
-import { fly } from "svelte/transition";
-import type { Recipe } from "../types";
+  import { onDestroy } from "svelte";
+  import { fly } from "svelte/transition";
+  import type { Recipe } from "../types";
 
-interface Props {
-	recipes: Recipe[];
-	/** レシピ id ごとの重み（履歴から。指定すると最近作ったものが出にくくなる） */
-	weights?: Map<string, number>;
-	onpick: (recipe: Recipe) => void;
-}
-let { recipes, weights, onpick }: Props = $props();
+  interface Props {
+    recipes: Recipe[];
+    /** レシピ id ごとの重み（履歴から。指定すると最近作ったものが出にくくなる） */
+    weights?: Map<string, number>;
+    onpick: (recipe: Recipe) => void;
+  }
+  let { recipes, weights, onpick }: Props = $props();
 
-let count = $state(1);
-let spinning = $state(false);
-let rolling = $state("");
-let results = $state<Recipe[]>([]);
-let useHistory = $state(true);
-let timer: ReturnType<typeof setInterval> | undefined;
+  let count = $state(1);
+  let spinning = $state(false);
+  let rolling = $state("");
+  let results = $state<Recipe[]>([]);
+  let useHistory = $state(true);
+  let timer: ReturnType<typeof setInterval> | undefined;
 
-const TICKS = 16;
-const INTERVAL_MS = 70;
+  const TICKS = 16;
+  const INTERVAL_MS = 70;
 
-function pickDistinct(n: number): Recipe[] {
-	const pool = [...recipes];
-	const w = (r: Recipe) => (useHistory ? (weights?.get(r.id) ?? 1) : 1);
-	const out: Recipe[] = [];
-	while (out.length < n && pool.length > 0) {
-		// 重みに比例した確率で1つ選ぶ（累積の重みが乱数を超えた最初の要素）
-		const target = Math.random() * pool.reduce((sum, r) => sum + w(r), 0);
-		let acc = 0;
-		let idx = pool.findIndex((r) => {
-			acc += w(r);
-			return acc > target;
-		});
-		if (idx < 0) idx = pool.length - 1;
-		out.push(pool.splice(idx, 1)[0]);
-	}
-	return out;
-}
+  function pickDistinct(n: number): Recipe[] {
+    const pool = [...recipes];
+    const w = (r: Recipe) => (useHistory ? (weights?.get(r.id) ?? 1) : 1);
+    const out: Recipe[] = [];
+    while (out.length < n && pool.length > 0) {
+      // 重みに比例した確率で1つ選ぶ（累積の重みが乱数を超えた最初の要素）
+      const target = Math.random() * pool.reduce((sum, r) => sum + w(r), 0);
+      let acc = 0;
+      let idx = pool.findIndex((r) => {
+        acc += w(r);
+        return acc > target;
+      });
+      if (idx < 0) idx = pool.length - 1;
+      out.push(pool.splice(idx, 1)[0]);
+    }
+    return out;
+  }
 
-function spin() {
-	if (spinning || recipes.length === 0) return;
-	spinning = true;
-	results = [];
-	let ticks = 0;
-	timer = setInterval(() => {
-		rolling = recipes[Math.floor(Math.random() * recipes.length)].name;
-		if (++ticks >= TICKS) {
-			clearInterval(timer);
-			results = pickDistinct(count);
-			spinning = false;
-		}
-	}, INTERVAL_MS);
-}
+  function spin() {
+    if (spinning || recipes.length === 0) return;
+    spinning = true;
+    results = [];
+    let ticks = 0;
+    timer = setInterval(() => {
+      rolling = recipes[Math.floor(Math.random() * recipes.length)].name;
+      if (++ticks >= TICKS) {
+        clearInterval(timer);
+        results = pickDistinct(count);
+        spinning = false;
+      }
+    }, INTERVAL_MS);
+  }
 
-onDestroy(() => clearInterval(timer));
+  onDestroy(() => clearInterval(timer));
 </script>
 
 <div class="options">
-  <label><input type="radio" bind:group={count} value={1} /> 1品</label>
-  <label><input type="radio" bind:group={count} value={3} /> 3品</label>
-  <label><input type="checkbox" bind:checked={useHistory} /> 最近作ったものは出にくくする</label>
-  <button type="button" class="primary" onclick={spin} disabled={spinning || recipes.length === 0}>ガチャを回す</button>
+  <label><input type="radio" bind:group={count} value={1}> 1品</label>
+  <label><input type="radio" bind:group={count} value={3}> 3品</label>
+  <label><input type="checkbox" bind:checked={useHistory}> 最近作ったものは出にくくする</label>
+  <button type="button" class="primary" onclick={spin} disabled={spinning || recipes.length === 0}>
+    ガチャを回す
+  </button>
   <span class="muted">候補 {recipes.length}品</span>
 </div>
 
