@@ -29,6 +29,6 @@ let { recipe, names, tagNames, lastMade, onmade, onclose }: Props = $props();
       <li>{step}</li>
     {/each}
   </ol>
-  <button class="primary" onclick={() => onmade(recipe)}>今日作った・食べた</button>
-  <button onclick={onclose}>閉じる</button>
+  <button type="button" class="primary" onclick={() => onmade(recipe)}>今日作った・食べた</button>
+  <button type="button" onclick={onclose}>閉じる</button>
 </section>

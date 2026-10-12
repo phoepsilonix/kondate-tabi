@@ -26,8 +26,13 @@ function pickDistinct(n: number): Recipe[] {
 	const w = (r: Recipe) => (useHistory ? (weights?.get(r.id) ?? 1) : 1);
 	const out: Recipe[] = [];
 	while (out.length < n && pool.length > 0) {
-		let x = Math.random() * pool.reduce((sum, r) => sum + w(r), 0);
-		let idx = pool.findIndex((r) => (x -= w(r)) < 0);
+		// 重みに比例した確率で1つ選ぶ（累積の重みが乱数を超えた最初の要素）
+		const target = Math.random() * pool.reduce((sum, r) => sum + w(r), 0);
+		let acc = 0;
+		let idx = pool.findIndex((r) => {
+			acc += w(r);
+			return acc > target;
+		});
 		if (idx < 0) idx = pool.length - 1;
 		out.push(pool.splice(idx, 1)[0]);
 	}
@@ -56,7 +61,7 @@ onDestroy(() => clearInterval(timer));
   <label><input type="radio" bind:group={count} value={1} /> 1品</label>
   <label><input type="radio" bind:group={count} value={3} /> 3品</label>
   <label><input type="checkbox" bind:checked={useHistory} /> 最近作ったものは出にくくする</label>
-  <button class="primary" onclick={spin} disabled={spinning || recipes.length === 0}>ガチャを回す</button>
+  <button type="button" class="primary" onclick={spin} disabled={spinning || recipes.length === 0}>ガチャを回す</button>
   <span class="muted">候補 {recipes.length}品</span>
 </div>
 
@@ -67,7 +72,7 @@ onDestroy(() => clearInterval(timer));
     {/key}
   {:else if results.length > 0}
     {#each results as r (r.id)}
-      <div><button onclick={() => onpick(r)}>{r.name}</button></div>
+      <div><button type="button" onclick={() => onpick(r)}>{r.name}</button></div>
     {/each}
   {:else}
     <span class="muted">ボタンを押すと今日の献立が決まります</span>

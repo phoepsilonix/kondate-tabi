@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { mergeAppData, emptyAppData } from "./app-data";
+import { emptyAppData, mergeAppData } from "./app-data";
 import base from "./data/base.json";
 import tohoku from "./data/packs/tohoku.json";
 import { knownIdsOf, validatePack } from "./pack";

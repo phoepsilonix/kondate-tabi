@@ -19,7 +19,7 @@ const main = $derived(
 );
 </script>
 
-<button class="card" onclick={() => onselect(recipe)}>
+<button type="button" class="card" onclick={() => onselect(recipe)}>
   <div class="name">
     {recipe.name}
     {#if missing !== undefined}

@@ -11,4 +11,7 @@ try {
   console.error("初期化に失敗しました", e);
 }
 
-export default mount(App, { target: document.getElementById("app")! });
+const target = document.getElementById("app");
+if (!target) throw new Error("#app が見つかりません");
+
+export default mount(App, { target });

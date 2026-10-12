@@ -22,6 +22,6 @@ const when = $derived(new Date(candidate.envelope.createdAt).toLocaleString("ja-
   <p class="muted">
     {when} ／ パントリー {summary.pantry}品・履歴 {summary.history}件・取り込みパック {summary.packs}件
   </p>
-  <button class="primary" onclick={onaccept}>このバックアップから復元</button>
-  <button onclick={ondismiss}>復元しない</button>
+  <button type="button" class="primary" onclick={onaccept}>このバックアップから復元</button>
+  <button type="button" onclick={ondismiss}>復元しない</button>
 </section>

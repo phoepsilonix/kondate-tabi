@@ -7,9 +7,9 @@ interface Props {
 let { selected, names, onremove }: Props = $props();
 </script>
 
-<div class="tags" aria-label="選択中の具材">
+<div class="tags">
   {#each selected as id (id)}
-    <button class="tag" onclick={() => onremove(id)} title="クリックで解除">
+    <button type="button" class="tag" onclick={() => onremove(id)} title="クリックで解除">
       {names.get(id) ?? id} ×
     </button>
   {:else}

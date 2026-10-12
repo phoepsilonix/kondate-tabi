@@ -1,7 +1,7 @@
 import { describe, expect, it, vi } from "vitest";
+import { MemoryBackupTarget } from "./adapters/memory";
 import { emptyAppData } from "./app-data";
 import { AutoBackup } from "./auto-backup";
-import { MemoryBackupTarget } from "./adapters/memory";
 
 const data = (pantry: string[]) => ({ ...emptyAppData(), pantry });
 

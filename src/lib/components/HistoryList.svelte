@@ -20,11 +20,11 @@ let { entries, recipes, onopen, onremove }: Props = $props();
       <li>
         <span class="muted">{new Date(e.at).toLocaleDateString('ja-JP')}（{daysLabel(daysSince(Date.parse(e.at)))}）</span>
         {#if recipe}
-          <button onclick={() => onopen(recipe)}>{recipe.name}</button>
+          <button type="button" onclick={() => onopen(recipe)}>{recipe.name}</button>
         {:else}
           <span>{e.recipeId}（データなし）</span>
         {/if}
-        <button onclick={() => onremove(e.id)} aria-label="この記録を削除">削除</button>
+        <button type="button" onclick={() => onremove(e.id)} aria-label="この記録を削除">削除</button>
       </li>
     {/each}
   </ul>

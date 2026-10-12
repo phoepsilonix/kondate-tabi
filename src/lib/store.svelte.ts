@@ -1,8 +1,8 @@
 import { type AppData, emptyAppData, mergeAppData } from "./app-data";
 import { AutoBackup, type BackupResult } from "./auto-backup";
 import { type BackupEnvelope, parseBackup, sortBackupNames } from "./backup";
-import { type LoadStatus, loadAppData, type RestoreCandidate } from "./persistence";
 import type { Result } from "./pack";
+import { type LoadStatus, loadAppData, type RestoreCandidate } from "./persistence";
 import type { Services } from "./ports";
 import type { Pack } from "./types";
 
@@ -92,8 +92,10 @@ class AppStore {
 
   /** 自動バックアップのファイルを1つ読み込んで検証する */
   async readBackup(name: string): Promise<Result<BackupEnvelope>> {
+    const target = this.services?.backupTarget;
+    if (!target) return { ok: false, errors: ["初期化されていません"] };
     try {
-      return await parseBackup(await this.services!.backupTarget.read(name));
+      return await parseBackup(await target.read(name));
     } catch {
       return { ok: false, errors: ["ファイルを読み込めませんでした"] };
     }

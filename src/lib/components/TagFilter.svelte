@@ -38,6 +38,6 @@ const groups = $derived(
     </fieldset>
   {/each}
   {#if selected.length > 0}
-    <button onclick={onclear}>絞り込みをクリア</button>
+    <button type="button" onclick={onclear}>絞り込みをクリア</button>
   {/if}
 </details>

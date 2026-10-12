@@ -1,4 +1,5 @@
 <script lang="ts">
+import { catalog } from "./lib/catalog.svelte";
 import DataPanel from "./lib/components/DataPanel.svelte";
 import Gacha from "./lib/components/Gacha.svelte";
 import HistoryList from "./lib/components/HistoryList.svelte";
@@ -8,7 +9,6 @@ import RecipeDetail from "./lib/components/RecipeDetail.svelte";
 import RestorePrompt from "./lib/components/RestorePrompt.svelte";
 import SelectedTags from "./lib/components/SelectedTags.svelte";
 import TagFilter from "./lib/components/TagFilter.svelte";
-import { catalog } from "./lib/catalog.svelte";
 import { filterByTags } from "./lib/filter";
 import { daysLabel, daysSince, historyWeights, lastMadeAt } from "./lib/history";
 import { matchRecipes } from "./lib/matching";
@@ -61,11 +61,11 @@ function search() {
   {/if}
 
   <nav>
-    <button aria-pressed={tab === "search"} onclick={() => (tab = "search")}>探す</button>
-    <button aria-pressed={tab === "gacha"} onclick={() => (tab = "gacha")}>献立ガチャ</button>
-    <button aria-pressed={tab === "pantry"} onclick={() => (tab = "pantry")}>パントリー</button>
-    <button aria-pressed={tab === "history"} onclick={() => (tab = "history")}>履歴</button>
-    <button aria-pressed={tab === "data"} onclick={() => (tab = "data")}>データ</button>
+    <button type="button" aria-pressed={tab === "search"} onclick={() => (tab = "search")}>探す</button>
+    <button type="button" aria-pressed={tab === "gacha"} onclick={() => (tab = "gacha")}>献立ガチャ</button>
+    <button type="button" aria-pressed={tab === "pantry"} onclick={() => (tab = "pantry")}>パントリー</button>
+    <button type="button" aria-pressed={tab === "history"} onclick={() => (tab = "history")}>履歴</button>
+    <button type="button" aria-pressed={tab === "data"} onclick={() => (tab = "data")}>データ</button>
   </nav>
 
   {#if tab === "search" || tab === "gacha"}
@@ -100,7 +100,7 @@ function search() {
           <option value={2}>2</option>
         </select>
       </label>
-      <button
+      <button type="button"
         class="primary"
         onclick={search}
         disabled={effective.length === 0 && selectedTags.length === 0}
@@ -166,7 +166,7 @@ function search() {
       selected={pantry.ids}
       ontoggle={(id) => pantry.toggle(id)}
     />
-    <button onclick={() => pantry.clear()} disabled={pantry.ids.length === 0}>すべて外す</button>
+    <button type="button" onclick={() => pantry.clear()} disabled={pantry.ids.length === 0}>すべて外す</button>
   {:else if tab === "history"}
     <h2>履歴</h2>
     <HistoryList

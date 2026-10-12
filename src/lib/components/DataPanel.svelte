@@ -134,9 +134,9 @@ const kindLabel = (id: string) =>
     <p class="muted">最後の自動バックアップ: {when(appStore.lastBackup.at)}</p>
   {/if}
   <div class="options">
-    <button onclick={backupNow} disabled={!files}>今すぐバックアップ</button>
-    <button onclick={exportBackup} disabled={!files}>エクスポート（ファイルに保存）</button>
-    <button onclick={importBackup} disabled={!files}>ファイルから復元</button>
+    <button type="button" onclick={backupNow} disabled={!files}>今すぐバックアップ</button>
+    <button type="button" onclick={exportBackup} disabled={!files}>エクスポート（ファイルに保存）</button>
+    <button type="button" onclick={importBackup} disabled={!files}>ファイルから復元</button>
   </div>
   <p class="muted">バックアップには、パントリーや履歴などの個人のデータが含まれます。共有するときはご注意ください。</p>
 
@@ -146,7 +146,7 @@ const kindLabel = (id: string) =>
       {#each appStore.backupNames.slice(0, 5) as name (name)}
         <li>
           <span>{nameTime(name)}</span>
-          <button onclick={() => previewAutoBackup(name)}>復元…</button>
+          <button type="button" onclick={() => previewAutoBackup(name)}>復元…</button>
         </li>
       {/each}
     </ul>
@@ -161,9 +161,9 @@ const kindLabel = (id: string) =>
       {pendingBackup.env.createdAt ? when(pendingBackup.env.createdAt) : ""} ／ パントリー {s.pantry}品・履歴
       {s.history}件・取り込みパック {s.packs}件
     </p>
-    <button class="primary" onclick={() => applyBackup("replace")}>今のデータを置き換える</button>
-    <button onclick={() => applyBackup("merge")}>今のデータに統合する</button>
-    <button onclick={() => (pendingBackup = null)}>キャンセル</button>
+    <button type="button" class="primary" onclick={() => applyBackup("replace")}>今のデータを置き換える</button>
+    <button type="button" onclick={() => applyBackup("merge")}>今のデータに統合する</button>
+    <button type="button" onclick={() => (pendingBackup = null)}>キャンセル</button>
   </section>
 {/if}
 
@@ -186,12 +186,12 @@ const kindLabel = (id: string) =>
           [{kindLabel(p.id)}] v{p.version} ／ レシピ{c.recipes}品
         </span>
         {#if catalog.isInstalled(p.id)}
-          <button onclick={() => appStore.removePack(p.id)}>削除</button>
+          <button type="button" onclick={() => appStore.removePack(p.id)}>削除</button>
         {/if}
       </li>
     {/each}
   </ul>
-  <button onclick={importPack} disabled={!files}>パックを読み込む</button>
+  <button type="button" onclick={importPack} disabled={!files}>パックを読み込む</button>
   <p class="muted">共有するパックは、ご自身で書いた内容のみにしてください。</p>
 </div>
 
@@ -203,8 +203,8 @@ const kindLabel = (id: string) =>
       {pendingPack.update ? "更新" : "追加"}します。
     </p>
     <p class="muted">レシピ {c.recipes}品・具材 {c.ingredients}種・タグ {c.tags}個</p>
-    <button class="primary" onclick={installPack}>{pendingPack.update ? "更新する" : "追加する"}</button>
-    <button onclick={() => (pendingPack = null)}>キャンセル</button>
+    <button type="button" class="primary" onclick={installPack}>{pendingPack.update ? "更新する" : "追加する"}</button>
+    <button type="button" onclick={() => (pendingPack = null)}>キャンセル</button>
   </section>
 {/if}
 
