@@ -63,3 +63,8 @@ src-tauri/              Tauri 2（find_matching_recipes コマンド）
 
 - 整形・lint は Biome に統一しています（設定は `biome.json`）。`pnpm lint`（確認）、`pnpm lint:fix`（lint の自動修正と整形）、`pnpm format`（整形のみ）。
 - Biome の Svelte 対応は実験的です（`html.experimentalFullSupportEnabled`）。確認した範囲（2.5.14）では、テンプレート内の `{@const x = ...}` を壊すため使わないでください。整形後は `pnpm check` で壊れていないか確認できます。
+
+## アイコン
+
+- 仮のアイコンです。元画像は `assets/icon-source.png`（1024×1024 の PNG）。
+- 差し替えるときは、元画像を置き換えて `pnpm tauri icon assets/icon-source.png` を実行すると、`src-tauri/icons/`（Windows・macOS・Linux・Android・iOS 用）が再生成されます。
